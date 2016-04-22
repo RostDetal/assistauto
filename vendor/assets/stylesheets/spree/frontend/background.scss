@@ -1,0 +1,20 @@
+@mixin preview-default{
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 140px;
+  margin-bottom: 10px;
+}
+.preview-sm{
+  @include preview-default;
+  background-image: url(asset-path("general/auto-small.png"));
+}
+
+.preview-md{
+  @include preview-default;
+  background-image: url(asset-path("general/auto-medium.png"));
+}
+
+.preview-lg{
+  @include preview-default;
+  background-image: url(asset-path("general/auto-large.jpg"));
+}

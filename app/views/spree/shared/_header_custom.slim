@@ -1,0 +1,26 @@
+nav.navbar.navbar-default.navbar-fixed-top.drop-shadow-bottom
+  .container
+    .navbar-header
+      button.navbar-toggle.collapsed type="button" data-toggle="collapse" data-target="#header-collapsing-content" aria-expanded="false"
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      = link_to image_tag(Spree::Config[:logo]), spree.root_path, class: 'navbar-brand'
+
+    - @taxons = @taxon && @taxon.parent ? @taxon.parent.children : Spree::Taxon.roots
+    .navbar-collapse.collapse id="header-collapsing-content"
+      form.navbar-form.navbar-right role="search"
+        .form-group
+          =search_field_tag :keywords, params[:keywords], :placeholder => Spree.t(:search), class: "form-control"
+          /button type="submit" style="border: 0; background: transparent"
+          /  =image_tag(asset_path("user/find.png"), :size=>'31x31')
+          = link_to image_tag(asset_path("user/find.png"), :size=>'31x31'), spree.login_path
+          /=submit_tag Spree.t(:search), :name => nil, :style => "border: 0; background: transparent"
+            /=image_tag(asset_path("user/find.png"), :size=>'31x31')
+
+        - if spree_current_user
+          = link_to Spree.t(:my_account), spree.account_path
+          = link_to Spree.t(:logout), spree.logout_path
+        - else
+          = link_to image_tag(asset_path("user/login.png"), :size=>'31x31'), spree.login_path

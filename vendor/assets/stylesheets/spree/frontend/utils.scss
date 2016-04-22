@@ -1,0 +1,41 @@
+@import '../../../../../../assistauto_git/app/assets/stylesheets/constants';
+
+.show-border{
+  border: 1px solid $global-font-color;
+}
+
+.content-align-right{
+  text-align: right;
+}
+
+.content-align-left{
+  text-align: left;
+}
+
+.content-align-center{
+  text-align: center !important;
+}
+
+.content-valign-center{
+  vertical-align: middle !important;
+}
+
+.height-60{
+  min-height: 60px;
+}
+
+.margin-top-10{
+ margin-top: 5px;
+}
+
+.drop-shadow-bottom{
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.20);
+}
+
+.border-bottom{
+  border-bottom: 1px solid #a6a6a6;
+}
+
+.border-top{
+  border-top: 1px solid #a6a6a6;
+}

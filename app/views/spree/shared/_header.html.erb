@@ -1,0 +1,19 @@
+<div id="spree-header">
+  <header id="header" data-hook>
+
+    <nav class="navbar navbar-default navbar-fixed-top drop-shadow-bottom">
+      <div class="container">
+        <div class="row">
+          <figure id="logo" class="col-md-4 header" data-hook>
+            <%= link_to image_tag(Spree::Config[:logo]), spree.root_path%>
+          </figure>
+          <%= render :partial => 'spree/shared/nav_bar' %>
+        </div>
+      </div>
+    </nav>
+
+  </header>
+
+</div>
+
+

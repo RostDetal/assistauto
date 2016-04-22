@@ -1,0 +1,6 @@
+<% if spree_current_user %>
+  <li><%= link_to Spree.t(:my_account), spree.account_path %></li>
+  <li><%= link_to Spree.t(:logout), spree.logout_path %></li>
+<% else %>
+  <li id="link-to-login"><%= link_to image_tag(asset_path("user/login.png"), :size=>'31x31'), spree.login_path%></li>
+<% end %>
