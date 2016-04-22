@@ -10,17 +10,16 @@ nav.navbar.navbar-default.navbar-fixed-top.drop-shadow-bottom
 
     - @taxons = @taxon && @taxon.parent ? @taxon.parent.children : Spree::Taxon.roots
     .navbar-collapse.collapse id="header-collapsing-content"
+
       form.navbar-form.navbar-right role="search"
         .form-group
-          =search_field_tag :keywords, params[:keywords], :placeholder => Spree.t(:search), class: "form-control"
-          /button type="submit" style="border: 0; background: transparent"
-          /  =image_tag(asset_path("user/find.png"), :size=>'31x31')
-          = link_to image_tag(asset_path("user/find.png"), :size=>'31x31'), spree.login_path
-          /=submit_tag Spree.t(:search), :name => nil, :style => "border: 0; background: transparent"
-            /=image_tag(asset_path("user/find.png"), :size=>'31x31')
-
-        - if spree_current_user
-          = link_to Spree.t(:my_account), spree.account_path
-          = link_to Spree.t(:logout), spree.logout_path
-        - else
-          = link_to image_tag(asset_path("user/login.png"), :size=>'31x31'), spree.login_path
+          - if spree_current_user
+            = link_to Spree.t(:my_account), spree.account_path
+            = link_to Spree.t(:logout), spree.logout_path
+          - else
+            = link_to "", spree.login_path, class: 'login-button hidden-xs'
+          .input-group
+            input.form-control type="search" name="keywords" id="keywords" placeholder="Я ищу..."
+            span.input-group-btn
+              button.btn.btn-success type="submit"
+                =image_tag(asset_path("user/search.png"))
