@@ -1,6 +1,6 @@
 
 .show-border{
-  //border: 1px solid $global-font-color;
+  border: 1px solid #000;
 }
 
 .content-align-right{
@@ -37,4 +37,24 @@
 
 .border-top{
   border-top: 1px solid #a6a6a6;
+}
+
+.text-uppercase
+{
+  text-transform: uppercase;
+}
+
+.no-border{
+  border: none !important;
+}
+
+.no-outline{
+  outline: 0;
+  a:hover, a:active, a:focus{
+    outline: 0;
+  }
+}
+
+.fill-color{
+  color: #B00100;
 }

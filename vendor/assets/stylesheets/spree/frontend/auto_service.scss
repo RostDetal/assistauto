@@ -1,0 +1,46 @@
+@import 'utils';
+
+.autoservice-wrapper
+{
+}
+
+.narrow-bar{
+  background-color: #e3e3e3;
+  height: 18px;
+  margin-bottom: 10px;
+}
+
+.autoservice-menu
+{
+  display: block;
+  height: 300px;
+}
+
+.autoservice-row{
+  background-color: #f1f1f1;
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+
+.autoservice-thumbail{
+  margin-bottom: 5px !important;
+}
+
+.autoservice-thumbail:hover{
+  background-color: #dbf7ff;
+}
+
+.autoservice-menu-title{
+  color: white !important;
+  background-color: #ff5644 !important;
+  font-size: 1.2em;
+  text-transform: uppercase;
+}
+
+.autoservice-menu-content
+{
+  display: inline-block;
+  background-color: #edecef;
+  width: 100%;
+}
+

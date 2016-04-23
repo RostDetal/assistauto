@@ -1,0 +1,51 @@
+.container-fluid.autoservice-wrapper.autoservice-row
+  .container
+    .row
+      .col-sm-4.col-md-2
+        .thumbnail.text-center.text-uppercase.no-outline.autoservice-thumbail
+          =link_to image_tag(asset_path('general/car-service.svg'), size: '65x65'), '#tab1', 'data-toggle': "tab"
+          a data-toggle="tab" href='#tab1'  Автосервис
+      .col-sm-4.col-md-2
+        .thumbnail.text-center.text-uppercase.no-outline.autoservice-thumbail
+          =link_to image_tag(asset_path('general/check.svg'), size: '65x65'), '#tab2', 'data-toggle': "tab"
+          a data-toggle="tab" href='#tab2' Диагностика
+      .col-sm-4.col-md-2
+        .thumbnail.text-center.text-uppercase.no-outline.autoservice-thumbail
+          =link_to image_tag(asset_path('general/oil.svg'), size: '65x65', class: 'fill-color'), '#tab3', 'data-toggle': "tab"
+          a data-toggle="tab" href='#tab3'  Замена масла
+      .col-sm-4.col-md-2
+        .thumbnail.text-center.text-uppercase.no-outline.autoservice-thumbail
+          =link_to image_tag(asset_path('general/wheel.svg'), size: '65x65'), '#tab4', 'data-toggle': "tab"
+          a data-toggle="tab" href='#tab4'  Шиномонтаж
+      .col-sm-4.col-md-2
+        .thumbnail.text-center.text-uppercase.no-outline.autoservice-thumbail
+          =link_to image_tag(asset_path('general/tool.svg'), size: '65x65'), '#tab5', 'data-toggle': "tab"
+          a data-toggle="tab" href='#tab5'  Ремонт
+      .col-sm-4.col-md-2
+        .thumbnail.text-center.text-uppercase.no-outline.autoservice-thumbail
+          =link_to image_tag(asset_path('general/store.svg'), size: '65x65'), '#tab6', 'data-toggle': "tab"
+          a data-toggle="tab" href='#tab5'  Магазин
+.container
+  .row
+    .tab-content.col-sm-9
+      .tab-pane.active id="tab1" Автосервис
+      .tab-pane id="tab2" Диагностика
+      .tab-pane id="tab3" Замена масла
+      .tab-pane id="tab4" Шиномонтаж
+      .tab-pane id="tab5" Ремонт
+      .tab-pane id="tab6" Интернет-магазин
+    .col-sm-3
+      |ss
+      /.col-xs-3.col-sm-3.col-md-3.col-lg-3
+        /.panel.panel-default
+          /.panel-heading.autoservice-menu-title.text-center
+          /  |Автосервис
+          /.panel-body
+          /ul.list-group
+          /  a.list-group-item data-toggle="tab" href="#tab1" Автосервис
+          /  a.list-group-item data-toggle="tab" href="#tab2" Шиномонтаж
+          /  a.list-group-item data-toggle="tab" href="#tab3" Замена масла
+          /  a.list-group-item data-toggle="tab" href="#tab4" Цены
+          /  a.list-group-item data-toggle="tab" href="#tab5" Расположение
+
+

@@ -1,0 +1,33 @@
+@import 'utils';
+
+.autostore-wrapper
+{
+  padding: 10px 0
+}
+
+.autostore-menu
+{
+  display: block;
+  height: 300px;
+  #content{
+
+  }
+}
+
+.autostore-menu-title{
+  color: white !important;
+  background-color: #ff574f !important;
+  //height: 40px;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  //margin: auto;
+  //line-height: 40px;
+}
+
+.autostore-menu-content
+{
+  display: inline-block;
+  background-color: #edecef;
+  width: 100%;
+}
+

@@ -10,7 +10,6 @@ nav.navbar.navbar-default.navbar-fixed-top.drop-shadow-bottom
 
     - @taxons = @taxon && @taxon.parent ? @taxon.parent.children : Spree::Taxon.roots
     .navbar-collapse.collapse id="header-collapsing-content"
-
       form.navbar-form.navbar-right role="search"
         .form-group
           - if spree_current_user
