@@ -1,23 +1,17 @@
 @import 'utils';
 
+
 .autoservice-wrapper
 {
 }
 
-.narrow-bar{
-  background-color: #e3e3e3;
-  height: 18px;
-  margin-bottom: 10px;
-}
-
-.autoservice-menu
-{
-  display: block;
-  height: 300px;
-}
-
 .autoservice-row{
   background-color: #f1f1f1;
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+
+.autoservice-row-clean{
   padding-top: 10px;
   padding-bottom: 5px;
 }
@@ -27,8 +21,16 @@
 }
 
 .autoservice-thumbail:hover{
-  background-color: #dbf7ff;
+  border-color: #5071a3;
 }
+
+
+.autoservice-menu
+{
+  display: block;
+  height: 300px;
+}
+
 
 .autoservice-menu-title{
   color: white !important;
@@ -42,5 +44,15 @@
   display: inline-block;
   background-color: #edecef;
   width: 100%;
+}
+
+.autoservice-page-content{
+  padding: 20px 20px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.autoservice-content-padding{
+  padding-left: 20px;
 }
 

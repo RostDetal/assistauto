@@ -16,4 +16,5 @@ Spree.config do |config|
   config.logo = "logo.png"
 end
 
+I18n.locale = :ru
 Spree.user_class = "Spree::User"
