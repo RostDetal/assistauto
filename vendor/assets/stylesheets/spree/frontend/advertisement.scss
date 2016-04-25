@@ -48,15 +48,15 @@
 }
 
 .advertisement-event-block{
-  background: red; /* For browsers that do not support gradients */
-  //background: -webkit-linear-gradient(red, yellow); /* For Safari 5.1 to 6.0 */
-  //background: -o-linear-gradient(red, yellow); /* For Opera 11.1 to 12.0 */
-  //background: -moz-linear-gradient(red, yellow); /* For Firefox 3.6 to 15 */
+  background: orangered; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(45deg,orangered,orange); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(45deg,orangered,orange); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(45deg,orangered,orange); /* For Firefox 3.6 to 15 */
   background: linear-gradient(45deg,orangered,orange); /* Standard syntax */
+
   p{
     color: white;
     font-size: 2.5em;
-
   }
 
   a{
