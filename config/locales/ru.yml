@@ -40,7 +40,10 @@ ru:
     logout: 'Выход'
     my_orders: 'Ваши заказы'
     you_have_no_orders_yet: 'Вы еще ничего не заказывали'
-    search_results: 'Результаты поиска '
+    instructions_to_reset_password: 'Введите E-mail для того чтобы мы выслали Вам ссылку на сброс пароля'
+    reset_password: 'Сбросить пароль'
+    search_results: 'Результаты поиска'
+    no_products_found: 'Не найдено ни одного товара'
     order_state:
       address: 'Адрес'
       delivery: 'Доставка'
