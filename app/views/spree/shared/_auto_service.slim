@@ -1,107 +1,129 @@
-.autoservice-wrapper
-  .container-fluid.autoservice-row
-    .container
+- if current_page?(spree.root_url)
+  .autoservice-wrapper
+    .container-fluid.autoservice-row
+      .container
+        .row
+          .col-sm-4.col-md-2
+            .thumbnail.text-center.text-uppercase.no-outline.autoservice-thumbail
+              =link_to image_tag(asset_path('general/car-service.svg'), size: '65x65'), '#tab1', 'data-toggle': "tab"
+              a data-toggle="tab" href='#tab1' =I18n.t 'auto.service.name'
+          .col-sm-4.col-md-2
+            .thumbnail.text-center.text-uppercase.no-outline.autoservice-thumbail
+              =link_to image_tag(asset_path('general/check.svg'), size: '65x65'), '#tab2', 'data-toggle': "tab"
+              a data-toggle="tab" href='#tab2' Диагностика
+          .col-sm-4.col-md-2
+            .thumbnail.text-center.text-uppercase.no-outline.autoservice-thumbail
+              =link_to image_tag(asset_path('general/oil.svg'), size: '65x65'), '#tab3', 'data-toggle': "tab"
+              a data-toggle="tab" href='#tab3'  Замена масла
+          .col-sm-4.col-md-2
+            .thumbnail.text-center.text-uppercase.no-outline.autoservice-thumbail
+              =link_to image_tag(asset_path('general/wheel.svg'), size: '65x65'), '#tab4', 'data-toggle': "tab"
+              a data-toggle="tab" href='#tab4'  Шиномонтаж
+          .col-sm-4.col-md-2
+            .thumbnail.text-center.text-uppercase.no-outline.autoservice-thumbail
+              =link_to image_tag(asset_path('general/tool.svg'), size: '65x65'), '#tab5', 'data-toggle': "tab"
+              a data-toggle="tab" href='#tab5'  Ремонт
+          .col-sm-4.col-md-2
+            .thumbnail.text-center.text-uppercase.no-outline.autoservice-thumbail
+              =link_to image_tag(asset_path('general/store.svg'), size: '65x65'), '#tab6', 'data-toggle': "tab"
+              a data-toggle="tab" href='#tab5'  Магазин
+    .container.autoservice-row-clean
       .row
-        .col-sm-4.col-md-2
-          .thumbnail.text-center.text-uppercase.no-outline.autoservice-thumbail
-            =link_to image_tag(asset_path('general/car-service.svg'), size: '65x65'), '#tab1', 'data-toggle': "tab"
-            a data-toggle="tab" href='#tab1' =I18n.t 'auto.service.name'
-        .col-sm-4.col-md-2
-          .thumbnail.text-center.text-uppercase.no-outline.autoservice-thumbail
-            =link_to image_tag(asset_path('general/check.svg'), size: '65x65'), '#tab2', 'data-toggle': "tab"
-            a data-toggle="tab" href='#tab2' Диагностика
-        .col-sm-4.col-md-2
-          .thumbnail.text-center.text-uppercase.no-outline.autoservice-thumbail
-            =link_to image_tag(asset_path('general/oil.svg'), size: '65x65'), '#tab3', 'data-toggle': "tab"
-            a data-toggle="tab" href='#tab3'  Замена масла
-        .col-sm-4.col-md-2
-          .thumbnail.text-center.text-uppercase.no-outline.autoservice-thumbail
-            =link_to image_tag(asset_path('general/wheel.svg'), size: '65x65'), '#tab4', 'data-toggle': "tab"
-            a data-toggle="tab" href='#tab4'  Шиномонтаж
-        .col-sm-4.col-md-2
-          .thumbnail.text-center.text-uppercase.no-outline.autoservice-thumbail
-            =link_to image_tag(asset_path('general/tool.svg'), size: '65x65'), '#tab5', 'data-toggle': "tab"
-            a data-toggle="tab" href='#tab5'  Ремонт
-        .col-sm-4.col-md-2
-          .thumbnail.text-center.text-uppercase.no-outline.autoservice-thumbail
-            =link_to image_tag(asset_path('general/store.svg'), size: '65x65'), '#tab6', 'data-toggle': "tab"
-            a data-toggle="tab" href='#tab5'  Магазин
-  .container.autoservice-row-clean
-    .row
-      .tab-content.col-sm-9 style="min-height:231px;"
-        .tab-pane.active id="tab1"
-          h3 =I18n.t 'auto.service.title'
-          .media.autoservice-content-padding
-            .media-left
-              =image_tag(asset_path('general/medal.svg'), size: '100x100')
-            .media-body
-              p.text-justify
-                small =I18n.t 'auto.service.content'
-        .tab-pane id="tab2"
-          h3 =I18n.t 'auto.check.title'
-          .media.autoservice-content-padding
-            .media-left
-              =image_tag(asset_path('general/car-checking.svg'), size: '100x100')
-            .media-body
-              p.text-justify
-                small =I18n.t 'auto.check.content'
-              .content-align-center
-                a.btn.btn-info role="button" href="#" style="margin-right:10px;padding-right:45px;padding-left:45px;"
-                  = I18n.t 'button.find-out-prices'
-                a.btn.btn-success role="button" href="#"
-                  = I18n.t 'button.go-to-diagnostic'
-        .tab-pane id="tab3"
-          h3 = I18n.t 'auto.oil.title'
-          .media.autoservice-content-padding
-            .media-left
-              = image_tag(asset_path('general/oil-change.svg'), size: '100x100')
-            .media-body
-              p.text-justify
-                small = I18n.t 'auto.oil.content'
-              .content-align-center
-                /.btn-group
-                a.btn.btn-info role="button" href="/wheel-service-prices" style="margin-right:10px;padding-right:45px;padding-left:45px;"
-                  = I18n.t 'button.find-out-prices'
-                a.btn.btn-success role="button" href="#"
-                  = I18n.t 'button.go-to-oil-change'
-        .tab-pane id="tab4"
-          h3 = I18n.t 'auto.wheel.title'
-          .media.autoservice-content-padding
-            .media-left
-              = image_tag(asset_path('general/carwheel.svg'), size: '100x100')
-            .media-body
-              p.text-justify
-                small = I18n.t 'auto.wheel.content'
-              .content-align-center
-                /.btn-group
-                a.btn.btn-info role="button" href="/wheel-service-prices" style="margin-right:10px;padding-right:65px;padding-left:65px;"
-                  = I18n.t 'auto.wheel.button-wheel-price'
-                a.btn.btn-success role="button" href="#"
-                  = I18n.t 'auto.wheel.button-wheel-label'
-        .tab-pane id="tab5"
-          h3 = I18n.t 'auto.repair.title'
-          .media.autoservice-content-padding
-            .media-left
-              = image_tag(asset_path('general/repair.svg'), size: '100x100')
-            .media-body
-              p.text-justify
-                small = I18n.t 'auto.repair.content'
-              .content-align-center
-                a.btn.btn-success role="button" href="#"
-                  = I18n.t 'auto.repair.button-perair-label'
-        .tab-pane id="tab6"
-          h3 = I18n.t 'auto.store.title'
-          .media.autoservice-content-padding
-            .media-left
-              = image_tag(asset_path('general/credit-card.svg'), size: '100x100')
-            .media-body
-              p.text-justify
-                small = I18n.t 'auto.store.content'
-      .col-xs-3.col-sm-3.col-md-3.col-lg-3
-        .panel.panel-default
-          .panel-heading.autoservice-menu-title.text-center
-            |Обратная связь
-          .panel-body
-            button.btn.btn-success type="button" Написать нам
+        .tab-content.col-sm-9 style="min-height:231px;"
+          .tab-pane.active id="tab1"
+            h3 =I18n.t 'auto.service.title'
+            .media.autoservice-content-padding
+              .media-left
+                =image_tag(asset_path('general/medal.svg'), size: '100x100')
+              .media-body
+                p.text-justify
+                  small =I18n.t 'auto.service.content'
+          .tab-pane id="tab2"
+            h3 =I18n.t 'auto.check.title'
+            .media.autoservice-content-padding
+              .media-left
+                =image_tag(asset_path('general/car-checking.svg'), size: '100x100')
+              .media-body
+                p.text-justify
+                  small =I18n.t 'auto.check.content'
+                .content-align-center
+                  a.btn.btn-info role="button" href="#" style="margin-right:10px;padding-right:45px;padding-left:45px;"
+                    = I18n.t 'button.find-out-prices'
+                  a.btn.btn-success role="button" href="#"
+                    = I18n.t 'button.go-to-diagnostic'
+          .tab-pane id="tab3"
+            h3 = I18n.t 'auto.oil.title'
+            .media.autoservice-content-padding
+              .media-left
+                = image_tag(asset_path('general/oil-change.svg'), size: '100x100')
+              .media-body
+                p.text-justify
+                  small = I18n.t 'auto.oil.content'
+                .content-align-center
+                  /.btn-group
+                  a.btn.btn-info role="button" href="/wheel-service-prices" style="margin-right:10px;padding-right:45px;padding-left:45px;"
+                    = I18n.t 'button.find-out-prices'
+                  a.btn.btn-success role="button" href="#"
+                    = I18n.t 'button.go-to-oil-change'
+          .tab-pane id="tab4"
+            h3 = I18n.t 'auto.wheel.title'
+            .media.autoservice-content-padding
+              .media-left
+                = image_tag(asset_path('general/carwheel.svg'), size: '100x100')
+              .media-body
+                p.text-justify
+                  small = I18n.t('auto.wheel.content').html_safe
+                .content-align-center
+                  a.btn.btn-info role="button" href="/wheel-service-prices" style="margin-right:10px;padding-right:65px;padding-left:65px;"
+                    = I18n.t 'button.find-out-prices'
+                  a.btn.btn-success role="button" href="#"
+                    = I18n.t 'button.go-to-wheels'
+          .tab-pane id="tab5"
+            h3 = I18n.t 'auto.repair.title'
+            .media.autoservice-content-padding
+              .media-left
+                = image_tag(asset_path('general/repair.svg'), size: '100x100')
+              .media-body
+                p.text-justify
+                  small = I18n.t 'auto.repair.content'
+                .content-align-center
+                  a.btn.btn-info role="button" href="/wheel-service-prices" style="margin-right:10px;padding-right:45px;padding-left:45px;"
+                    = I18n.t 'button.find-out-prices'
+                  a.btn.btn-success role="button" href="#"
+                    = I18n.t 'auto.repair.button-perair-label'
+          .tab-pane id="tab6"
+            h3 = I18n.t 'auto.store.title'
+            .media.autoservice-content-padding
+              .media-left
+                = image_tag(asset_path('general/credit-card.svg'), size: '100x100')
+              .media-body
+                p.text-justify
+                  small = I18n.t 'auto.store.content'
+        .col-xs-12.col-sm-3.col-md-3.col-lg-3
+          .autoservice-work-time
+            .autoservice-work-time__header
+              = image_tag(asset_path('general/clock.png'), size: '40x40')
+              span.text-uppercase
+                b =I18n.t('global.work_time')
+            .autoservice-work-time__content
+              address
+                strong =I18n.t 'auto.service.name'
+                ul.list-unstyled
+                  small
+                    li =I18n.t('time.week').html_safe
+                    li =I18n.t('time.weekend').html_safe
+              address
+                strong =I18n.t 'auto.store.online'
+                ul.list-unstyled
+                  small
+                    li =I18n.t('time.24ours').html_safe
+                    li =I18n.t('time.week').html_safe
+                    li =I18n.t('time.weekend').html_safe
+
+          /.panel.panel-default
+            .panel-heading.autoservice-menu-title.text-center
+              |Обратная связь
+            .panel-body
+              button.btn.btn-success type="button" Написать нам
 
 

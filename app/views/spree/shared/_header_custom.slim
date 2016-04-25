@@ -13,8 +13,12 @@ nav.navbar.navbar-default.navbar-fixed-top.drop-shadow-bottom
       form.navbar-form.navbar-right role="search"
         .form-group
           - if spree_current_user
-            = link_to Spree.t(:my_account), spree.account_path
-            = link_to Spree.t(:logout), spree.logout_path
+            .btn-group
+              = link_to "", "", class: 'login-button dropdown-toggle', 'data-toggle'=>"dropdown", 'aria-haspopup'=>"true", 'aria-expanded'=>"false"
+              ul.dropdown-menu.custom-menu
+                li =link_to Spree.t(:my_account), spree.account_path
+                li =link_to Spree.t(:logout), spree.logout_path
+                /li.divider role="separator"
           - else
             = link_to "", spree.login_path, class: 'login-button hidden-xs'
           .input-group

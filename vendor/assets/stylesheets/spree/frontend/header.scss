@@ -10,10 +10,14 @@
   padding: 10px 16px;
   margin-right: 10px;
   vertical-align: middle;
-
-
 }
 
 .login-button:hover{
   background-image: url(asset_path("user/login-hover.png"));
+}
+
+.custom-menu{
+  margin-top: 10px;
+  border-radius: 0px !important;
+  right: -50px;
 }

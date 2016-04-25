@@ -16,5 +16,5 @@
 
 .preview-lg{
   @include preview-default;
-  background-image: url(asset-path("general/auto-large.jpg"));
+  background-image: url(asset-path("general/auto-large.png"));
 }

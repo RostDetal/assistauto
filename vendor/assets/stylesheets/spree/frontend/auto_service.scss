@@ -3,10 +3,11 @@
 
 .autoservice-wrapper
 {
+  padding-bottom: 10px;
 }
 
 .autoservice-row{
-  background-color: #f1f1f1;
+  background-color: #e2e2e2;
   padding-top: 10px;
   padding-bottom: 5px;
 }
@@ -55,4 +56,36 @@
 .autoservice-content-padding{
   padding-left: 20px;
 }
+
+.autoservice-work-time{
+  background-color: #fff;
+  border-radius: 4px;
+  width: 100%;
+  border: 1px solid #e2e2e2;
+  padding: 15px;
+  padding-bottom: 0 !important;
+}
+
+.autoservice-work-time__header{
+  display: inline-block;
+  width: 100%;
+  float: left;
+  vertical-align: middle;
+  border-bottom: 1px solid #e2e2e2;
+  padding-bottom: 10px;
+  img{
+    margin-right:10px;
+  }
+
+  margin-bottom: 5px;
+}
+
+.autoservice-work-time__content{
+  padding-left: 10px;
+  ul{
+    padding-left: 10px;
+  }
+}
+
+
 
