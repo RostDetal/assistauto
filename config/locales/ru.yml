@@ -40,16 +40,26 @@ ru:
     logout: 'Выход'
     my_orders: 'Ваши заказы'
     you_have_no_orders_yet: 'Вы еще ничего не заказывали'
+    search_results: 'Результаты поиска '
     order_state:
       address: 'Адрес'
       delivery: 'Доставка'
       payment: 'Оплата'
       complete: 'Завершение'
 
+  views:
+    pagination:
+      next: 'След.'
+      previous: 'Пред.'
+      first: 'В начало'
+      last: 'В конец'
+
   global:
     work_time: 'Режим работы'
 
   devise:
+    failure:
+      invalid: 'Ошибка входа. Проверьте введенные данные'
     sessions:
       spree_user:
         signed_out: 'Выход выполнен успешно'

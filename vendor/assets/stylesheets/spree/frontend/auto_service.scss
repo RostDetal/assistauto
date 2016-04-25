@@ -19,10 +19,17 @@
 
 .autoservice-thumbail{
   margin-bottom: 5px !important;
+  a{
+    color: #00538d !important;
+  }
+
+  a:hover{
+    color: #0082da !important;
+  }
 }
 
 .autoservice-thumbail:hover{
-  border-color: #5071a3;
+  border-color: #0082da;
 }
 
 
