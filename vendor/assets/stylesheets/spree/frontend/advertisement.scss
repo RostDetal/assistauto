@@ -94,7 +94,7 @@
 
 .advertisement-social-block{
   background-color: #fff;
-  border: 1px solid #e2e2e2;
+  //border: 1px solid #e2e2e2;
   border-radius: 4px;
   padding-bottom: 0 !important;
   padding-left: 15px;
@@ -102,4 +102,26 @@
   padding-top: 15px;
   width: 100%;
   height: 100%;
+
+  p{
+    color: black;
+    font-size: 1.9em;
+
+  }
+
+  a{
+    //background: none !important;
+    background-color: transparent;
+    color: black;
+    border-color: black;
+    text-transform: uppercase;
+  }
+
+  a:hover{
+    color: black;
+    border-color: black;
+    background: rgba(255, 255, 255, .3);
+  }
+
+  padding: 100px 50px !important;
 }
