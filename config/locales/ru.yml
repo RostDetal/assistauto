@@ -105,23 +105,23 @@ ru:
         iso: ISO
         iso3: ISO3
         iso_name: ISO Name
-        name: Name
+        name: 'Имя'
         numcode: ISO Code
       spree/credit_card:
         base: ''
-        cc_type: Type
-        month: Month
-        number: Number
+        cc_type: 'Тип'
+        month: 'Месяц'
+        number: 'Число'
         verification_value: Verification Value
-        year: Year
-        name: Name
+        year: 'Год'
+        name: 'Имя'
       spree/inventory_unit:
         state: State
       spree/line_item:
-        price: Price
-        quantity: Quantity
+        price: 'Цена'
+        quantity: 'Кол-во'
       spree/option_type:
-        name: Name
+        name: 'Name'
         presentation: Presentation
       spree/order:
         checkout_complete: Checkout Complete
@@ -491,7 +491,7 @@ ru:
     add_rule_of_type: Add rule of type
     add_state: Add State
     add_stock: Add Stock
-    add_to_cart: Add To Cart
+    add_to_cart: 'В корзину'
     add_variant: Add Variant
     additional_item: Additional Item
     address: Address
@@ -597,7 +597,7 @@ ru:
     card_number: Card Number
     card_type: Brand
     card_type_is: Card type is
-    cart: Cart
+    cart: 'Корзина'
     cart_subtotal:
       one: 'Subtotal (1 item)'
       other: 'Subtotal (%{count} items)'
@@ -618,16 +618,16 @@ ru:
     clone: Clone
     close: Close
     close_all_adjustments: Close All Adjustments
-    code: Code
-    company: Company
+    code: 'Код'
+    company: 'Компания'
     complete: complete
     configuration: 'Настройка'
     configurations: 'Настройки'
     confirm: Confirm
     confirm_delete: Confirm Deletion
     confirm_password: Password Confirmation
-    continue: Continue
-    continue_shopping: Continue shopping
+    continue: 'Продолжить'
+    continue_shopping: 'Продолжить покупки'
     cost_currency: Cost Currency
     cost_price: Cost Price
     could_not_connect_to_jirafe: Could not connect to Jirafe to sync data. This will be automatically retried later.
@@ -855,25 +855,25 @@ ru:
       path: Path
     last_name: Last Name
     last_name_begins_with: Last Name Begins With
-    learn_more: Learn More
+    learn_more: 'Подробнее..'
     lifetime_stats: Lifetime Stats
     line_item_adjustments: "Line item adjustments"
-    list: List
-    loading: Loading
-    loading_tree: Loading tree. Please wait…
+    list: 'Список'
+    loading: 'Загрузка'
+    loading_tree: 'Загружается структура, пожалуйста подождите...'
     locale_changed: Locale Changed
     location: Location
     lock: Lock
     log_entries: "Log Entries"
     logs: "Logs"
-    logged_in_as: Logged in as
-    logged_in_succesfully: Logged in successfully
+    logged_in_as: 'Вошли как'
+    logged_in_succesfully: 'Вы успешно вошли'
     logged_out: You have been logged out.
-    login: Login
+    login: 'Войти'
     login_as_existing: Login as Existing Customer
     login_failed: Login authentication failed.
-    login_name: Login
-    logout: Logout
+    login_name: 'Войти'
+    logout: 'Выход'
     look_for_similar_items: Look for similar items
     make_refund: Make refund
     make_sure_the_above_reimbursement_amount_is_correct: Make sure the above reimbursement amount is correct
@@ -896,9 +896,9 @@ ru:
     month: Month
     more: More
     move_stock_between_locations: Move Stock Between Locations
-    my_account: My Account
-    my_orders: My Orders
-    name: Name
+    my_account: 'Кабинет'
+    my_orders: 'Мои заказы'
+    name: 'Имя'
     name_on_card: Name on card
     name_or_sku: Name or SKU (enter at least first 3 characters of product name)
     new: New
@@ -1234,10 +1234,10 @@ ru:
     sales_total: Sales Total
     sales_total_description: Sales Total For All Orders
     sales_totals: Sales Totals
-    save_and_continue: Save and Continue
-    save_my_address: Save my address
-    say_no: 'No'
-    say_yes: 'Yes'
+    save_and_continue: 'Сохранить и продолжить'
+    save_my_address: 'Сохранить адрес'
+    say_no: 'Нет'
+    say_yes: 'Да'
     scope: Scope
     search: Search
     search_results: Search results for '%{keywords}'
@@ -1294,7 +1294,7 @@ ru:
     shipping_methods: Shipping Methods
     shipping_price_sack: Price sack
     shipping_total: Shipping total
-    shop_by_taxonomy: Shop by %{taxonomy}
+    shop_by_taxonomy: 'Товары по %{taxonomy}'
     shopping_cart: Shopping Cart
     show: Show
     show_active: Show Active
