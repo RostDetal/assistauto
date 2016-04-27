@@ -20,6 +20,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 ru:
+  errors:
+    connection_refused: 'Соединение разъединено'
   date:
     formats:
       default: "Стандартный"
@@ -453,6 +455,7 @@ ru:
     assistauto_vacancies: 'Вакансии'
     assistauto_events: 'Акции'
     assistauto_partners: 'Партнеры'
+    assistauto_bookin: 'Запись в автосервис'
     abbreviation: Abbreviation
     accept: 'Принять'
     acceptance_status: Acceptance status
