@@ -1,0 +1,141 @@
+<% content_for :page_title do %>
+  <%= Spree.t(:assistauto_settings) %>
+<% end %>
+
+<%= form_tag admin_general_settings_path, method: :put do %>
+  <div id="preferences" data-hook>
+
+    <fieldset class="general no-border-top">
+
+      <%= fields_for :store do |f| %>
+
+        <h4><b>ООО "Русь Трейд"</b></h4>
+        <div class="row" style="border-radius: 4px; background-color: #eeeeee;padding-top:10px; padding-bottom:9px;">
+          <div class="col-md-6">
+            <div class="form-group" data-hook="admin_general_setting_input_name">
+              <%= f.label I18n.t('partner.api_url') %>
+              <%= text_field_tag :voshod_api_url, Spree::Config[:voshod_api_url], class: 'form-control' %>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group" data-hook="admin_general_setting_input_name">
+              <%= f.label I18n.t('partner.login') %>
+              <%= text_field_tag :voshod_api_login, Spree::Config[:voshod_api_login], class: 'form-control' %>
+            </div>
+
+          </div>
+          <div class="col-md-3">
+            <div class="form-group" data-hook="admin_general_setting_input_name">
+              <%= f.label I18n.t('partner.pass') %>
+              <%= text_field_tag :voshod_api_pass, Spree::Config[:voshod_api_pass], class: 'form-control' %>
+            </div>
+          </div>
+        </div>
+        <br>
+          <h4><b>Яндекс Касса</b></h4>
+          <div class="row" style="border-radius: 4px; background-color: #eeeeee;padding-top:10px; padding-bottom:9px;">
+            <div class="col-md-6">
+              <div class="form-group" data-hook="admin_general_setting_input_name">
+                <%= f.label I18n.t('partner.api_url') %>
+                <%= text_field_tag :yandex_api_url, Spree::Config[:yandex_api_url], class: 'form-control' %>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group" data-hook="admin_general_setting_input_name">
+                <%= f.label I18n.t('partner.login') %>
+                <%= text_field_tag :yandex_api_login, Spree::Config[:yandex_api_login], class: 'form-control' %>
+              </div>
+
+            </div>
+            <div class="col-md-3">
+              <div class="form-group" data-hook="admin_general_setting_input_name">
+                <%= f.label I18n.t('partner.pass') %>
+                <%= text_field_tag :yandex_api_pass, Spree::Config[:yandex_api_pass], class: 'form-control' %>
+              </div>
+            </div>
+          </div>
+      <% end %>
+
+      <div class="row">
+        <div class="col-md-6">
+
+          <%#-------------------------------------------------%>
+          <%# Security settings                               %>
+          <%#-------------------------------------------------%>
+          <div class="panel panel-default security">
+            <div class="panel-heading">
+              <h1 class="panel-title">
+                <%= Spree.t(:security_settings)%>
+              </h1>
+            </div>
+
+            <div class="panel-body">
+              <% @preferences_security.each do |key|
+                  type = Spree::Config.preference_type(key) %>
+                  <div class="checkbox">
+                    <%= label_tag key do %>
+                      <%= preference_field_tag(key, Spree::Config[key], type: type) %>
+                      <%= Spree.t(key) %>
+                    <% end %>
+                  </div>
+              <% end %>
+            </div>
+          </div>
+
+          <%#-------------------------------------------------%>
+          <%# Clear cache                                     %>
+          <%#-------------------------------------------------%>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h1 class="panel-title"><%= Spree.t(:clear_cache)%></h1>
+            </div>
+
+            <div class="panel-body">
+              <div class="clear-cache-warning alert alert-warning">
+                <%= Spree.t(:clear_cache_warning) %>
+              </div>
+              <div data-hook="general_settings_clear_cache">
+                <%= button Spree.t(:clear_cache), 'ok', 'button', id: "clear_cache" %>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-md-6">
+
+          <%#-------------------------------------------------%>
+          <%# Currency Settings                               %>
+          <%#-------------------------------------------------%>
+          <div class="panel panel-default currency">
+            <div class="panel-heading">
+              <h1 class="panel-title">
+                <%= Spree.t(:currency_settings)%>
+              </h1>
+            </div>
+
+            <div class="panel-body">
+              <div class="form-group">
+                <%= label_tag :currency, Spree.t(:choose_currency) %>
+                <%= select_tag :currency, currency_options %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-actions" data-hook="buttons">
+        <%= button Spree.t('actions.update'), 'save' %>
+        <span class="or"><%= Spree.t(:or) %></span>
+        <%= button_link_to Spree.t('actions.cancel'), edit_admin_general_settings_url, icon: 'delete' %>
+      </div>
+
+    </fieldset>
+
+  </div>
+
+<% end %>
+
+<script>
+  $('#store_default_currency').select2();
+  $('#currency').select2();
+</script>

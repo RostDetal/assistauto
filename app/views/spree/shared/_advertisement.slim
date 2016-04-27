@@ -1,43 +1,44 @@
-.advertisement-wrapper
-  .container
-    .row
-      .col-xs-3.col-sm-3.col-md-3.col-lg-3.advert-block
-        .advertisement-default.advertisement-event-block
-          p.text-center
-            |Акция
-            a.btn.btn-default
-              |Узнать
+- if current_page?(spree.root_url)
+  .advertisement-wrapper
+    .container
+      .row
+        .col-xs-3.col-sm-3.col-md-3.col-lg-3.advert-block
+          .advertisement-default.advertisement-event-block
+            p.text-center
+              |Акция
+              a.btn.btn-default
+                |Узнать
 
-      .col-xs-3.col-sm-3.col-md-3.col-lg-3.advert-block
-        .advertisement-default.advertisement-blog-block
-          #image
-          #content
-            #section Блог
-            p#title Замена сцепления на Нива
-            #text
-              |Решили замутить съем коробки, все раснятулось на весь день ...
-            #date
-              |12.05.2016
-
-      .col-xs-3.col-sm-3.col-md-3.col-lg-3.advert-block
-        .advertisement-default.advertisement-comment-block
-          #image
+        .col-xs-3.col-sm-3.col-md-3.col-lg-3.advert-block
+          .advertisement-default.advertisement-blog-block
+            #image
             #content
+              #section Блог
               p#title Замена сцепления на Нива
               #text
                 |Решили замутить съем коробки, все раснятулось на весь день ...
+              #date
+                |12.05.2016
+
+        .col-xs-3.col-sm-3.col-md-3.col-lg-3.advert-block
+          .advertisement-default.advertisement-comment-block
+            #image
+              #content
+                p#title Замена сцепления на Нива
+                #text
+                  |Решили замутить съем коробки, все раснятулось на весь день ...
 
 
-      .col-xs-3.col-sm-3.col-md-3.col-lg-3.advert-block
-        .advertisement-default.advertisement-social-block
-          p.text-center
-            |Подпишитесь
-          small.text-center style="display:inline-block;margin-bottom:10px;"
-            |Чтобы получить все новости первым
+        .col-xs-3.col-sm-3.col-md-3.col-lg-3.advert-block
+          .advertisement-default.advertisement-social-block
+            p.text-center
+              |Подпишитесь
+            small.text-center style="display:inline-block;margin-bottom:10px;"
+              |Чтобы получить все новости первым
 
-          .content-align-center
-            a.btn.btn-default
-              |Подробнее
+            .content-align-center
+              a.btn.btn-default
+                |Подробнее
 
 
 

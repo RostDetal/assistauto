@@ -60,4 +60,13 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+
+end
+
+Spree::Core::Engine.routes.draw do
+  namespace :admin do
+    resource :autoservice_settings do
+    end
+  end
 end

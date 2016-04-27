@@ -18,3 +18,4 @@ end
 
 I18n.locale = :ru
 Spree.user_class = "Spree::User"
+

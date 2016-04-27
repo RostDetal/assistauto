@@ -5,27 +5,27 @@
         .row
           .col-sm-4.col-md-2
             .thumbnail.text-center.text-uppercase.no-outline.autoservice-thumbail
-              =link_to image_tag(asset_path('general/car-service.svg'), size: '65x65'), '#tab1', 'data-toggle': "tab"
+              =link_to image_tag(asset_path('general/car-service.svg'), size: '65x65'), '#tab1', 'data-toggle'=> "tab"
               a data-toggle="tab" href='#tab1' =I18n.t 'auto.service.name'
           .col-sm-4.col-md-2
             .thumbnail.text-center.text-uppercase.no-outline.autoservice-thumbail
-              =link_to image_tag(asset_path('general/check.svg'), size: '65x65'), '#tab2', 'data-toggle': "tab"
+              =link_to image_tag(asset_path('general/check.svg'), size: '65x65'), '#tab2', 'data-toggle'=> "tab"
               a data-toggle="tab" href='#tab2' =I18n.t ('auto.check.name')
           .col-sm-4.col-md-2
             .thumbnail.text-center.text-uppercase.no-outline.autoservice-thumbail
-              =link_to image_tag(asset_path('general/oil.svg'), size: '65x65'), '#tab3', 'data-toggle': "tab"
+              =link_to image_tag(asset_path('general/oil.svg'), size: '65x65'), '#tab3', 'data-toggle'=> "tab"
               a data-toggle="tab" href='#tab3'  =I18n.t ('auto.oil.name')
           .col-sm-4.col-md-2
             .thumbnail.text-center.text-uppercase.no-outline.autoservice-thumbail
-              =link_to image_tag(asset_path('general/wheel.svg'), size: '65x65'), '#tab4', 'data-toggle': "tab"
+              =link_to image_tag(asset_path('general/wheel.svg'), size: '65x65'), '#tab4', 'data-toggle'=> "tab"
               a data-toggle="tab" href='#tab4'  =I18n.t ('auto.wheel.name')
           .col-sm-4.col-md-2
             .thumbnail.text-center.text-uppercase.no-outline.autoservice-thumbail
-              =link_to image_tag(asset_path('general/tool.svg'), size: '65x65'), '#tab5', 'data-toggle': "tab"
+              =link_to image_tag(asset_path('general/tool.svg'), size: '65x65'), '#tab5', 'data-toggle'=> "tab"
               a data-toggle="tab" href='#tab5'  =I18n.t ('auto.repair.name')
           .col-sm-4.col-md-2
             .thumbnail.text-center.text-uppercase.no-outline.autoservice-thumbail
-              =link_to image_tag(asset_path('general/store.svg'), size: '65x65'), '#tab6', 'data-toggle': "tab"
+              =link_to image_tag(asset_path('general/store.svg'), size: '65x65'), '#tab6', 'data-toggle'=> "tab"
               a data-toggle="tab" href='#tab5'  =I18n.t ('auto.store.name')
     .container.autoservice-row-clean
       .row
@@ -120,7 +120,7 @@
                     li =I18n.t('time.weekend').html_safe
 
           /.panel.panel-default
-            .panel-heading.autoservice-menu-title.text-center
+            .panel-heading.autoservice_settings-menu-title.text-center
               |Обратная связь
             .panel-body
               button.btn.btn-success type="button" Написать нам
