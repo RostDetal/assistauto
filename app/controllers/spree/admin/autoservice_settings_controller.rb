@@ -4,6 +4,10 @@ module Spree
       include Spree::Backend::Callbacks
       before_action :set_store
 
+      def show
+        render 'edit'
+      end
+
       def edit
         @preferences_security = []
       end
@@ -17,12 +21,12 @@ module Spree
         current_store.update_attributes store_params
 
         flash[:success] = Spree.t(:successfully_updated, resource: Spree.t(:general_settings))
-        redirect_to edit_admin_general_settings_path
+        redirect_to edit_admin_autoservice_settings_path
       end
 
       private
       def store_params
-        params.require(:store).permit(permitted_store_attributes)
+        params.permit(permitted_store_attributes)
       end
 
       def set_store

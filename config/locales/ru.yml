@@ -35,6 +35,7 @@ ru:
 
   global:
     work_time: 'Режим работы'
+    sku: 'Артикул'
 
   devise:
     failure:
@@ -211,34 +212,34 @@ ru:
         name: Site Name
         mail_from_address: Mail From Address
       spree/tax_category:
-        description: Description
-        name: Name
+        description: 'Описание'
+        name: 'Имя'
       spree/tax_rate:
         amount: Rate
         included_in_price: Included in Price
         show_rate_in_label: Show rate in label
       spree/taxon:
-        name: Name
+        name: 'Имя'
         permalink: Permalink
         position: Position
       spree/taxonomy:
-        name: Name
+        name: 'Имя'
       spree/user:
-        email: Email
-        password: Password
+        email: 'E-mail'
+        password: 'Пароль'
         password_confirmation: Password Confirmation
       spree/variant:
         cost_currency: Cost Currency
         cost_price: Cost Price
-        depth: Depth
-        height: Height
-        price: Price
+        depth: 'Длина'
+        height: 'Высота'
+        price: 'Цена'
         sku: SKU
-        weight: Weight
-        width: Width
+        weight: 'Все'
+        width: 'Ширина'
       spree/zone:
-        description: Description
-        name: Name
+        description: 'Описание'
+        name: 'Имя'
     models:
       spree/address:
         one: Address
@@ -1073,11 +1074,11 @@ ru:
     presentation: Presentation
     previous: Previous
     previous_state_missing: "n/a"
-    price: Price
+    price: 'Цена'
     price_range: Price Range
     price_sack: Price Sack
     process: Process
-    product: Product
+    product: 'Товар'
     product_details: Product Details
     product_has_no_description: This product has no description
     product_not_available_in_this_currency: This product is not available in the selected currency.
