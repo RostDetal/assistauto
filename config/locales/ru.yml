@@ -893,7 +893,7 @@ ru:
     metadata: Metadata
     minimal_amount: Minimal Amount
     missing_return_authorization: ! 'Missing Return Authorization for %{item_name}.'
-    month: Month
+    month: 'Месяц'
     more: More
     move_stock_between_locations: Move Stock Between Locations
     my_account: 'Кабинет'
