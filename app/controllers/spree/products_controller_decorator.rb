@@ -10,8 +10,16 @@ Spree::ProductsController.class_eval do
   private
 
   def check_price(sku)
-    request = url+"/search/articles?userlogin="+lgn+"&userpsw="+psw+"&number="+sku+"&brand=AMTEL"
-    response = HTTParty.get(request).to_json
+
+    begin
+      request = url+"/search/articles?userlogin="+lgn+"&userpsw="+psw+"&number="+sku+"&brand=AMTEL"
+      response = HTTParty.get(request).to_json
+    rescue
+      request = {}
+    end
+
+
+
   end
 
   private
