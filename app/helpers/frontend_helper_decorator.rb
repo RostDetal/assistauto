@@ -3,7 +3,7 @@ Spree::FrontendHelper.class_eval do
 
   def check_price(sku)
     request = url+"/search/articles?userlogin="+lgn+"&userpsw="+psw+"&number="+sku+"&brand=AMTEL"
-    response = HTTParty.get(request)
+    response = HTTParty.get(request).to_json
   end
 
   private
