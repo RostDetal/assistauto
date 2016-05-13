@@ -14,4 +14,5 @@
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require turbolinks
+//= require spree/frontend/autoservice.js.coffee
 //= require_tree .
