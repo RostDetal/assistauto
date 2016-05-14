@@ -246,6 +246,9 @@ ru:
       spree/address:
         one: Address
         other: Addresses
+      spree/partner:
+        one: 'Поставщик'
+        other: 'Поставщики'
       spree/country:
         one: Country
         other: Countries
@@ -457,9 +460,10 @@ ru:
     assistauto_blog: 'Блог'
     assistauto_vacancies: 'Вакансии'
     assistauto_events: 'Акции'
-    assistauto_partners: 'Партнеры'
+    assistauto_partners: 'Поставщики'
     assistauto_bookin: 'Запись в автосервис'
     abbreviation: Abbreviation
+    partner_name: 'Название поставщика'
     accept: 'Принять'
     acceptance_status: Acceptance status
     acceptance_errors: Acceptance errors
@@ -482,6 +486,8 @@ ru:
     activate: Activate
     active: 'Активен'
     add: 'Добавить'
+
+    add_partner: 'Добавить поставщика'
     add_action_of_type: Add action of type
     add_country: Add Country
     add_coupon_code: Add Coupon Code
@@ -714,7 +720,7 @@ ru:
     display: Display
     doesnt_track_inventory: It doesn't track inventory
     edit: 'Редактировать'
-    editing_resource: 'Editing %{resource}'
+    editing_resource: 'Редактирование %{resource}'
     editing_rma_reason: Editing RMA Reason
     editing_user: Editing User
     eligibility_errors:
@@ -909,6 +915,7 @@ ru:
     new_customer: New Customer
     new_customer_return: New Customer Return
     new_country: New Country
+    new_partner: 'Новый поставщик'
     new_image: New Image
     new_option_type: New Option Type
     new_order: New Order
@@ -1371,11 +1378,11 @@ ru:
     subtotal: Subtotal
     subtract: Subtract
     success: Success
-    successfully_created: ! '%{resource} has been successfully created!'
+    successfully_created: ! '%{resource} был успешно создан!'
     successfully_refunded: ! '%{resource} has been successfully refunded!'
-    successfully_removed: ! '%{resource} has been successfully removed!'
+    successfully_removed: ! '%{resource} был успешно удален!'
     successfully_signed_up_for_analytics: Successfully signed up for Spree Analytics
-    successfully_updated: ! '%{resource} has been successfully updated!'
+    successfully_updated: ! '%{resource} был успешно обновлен!'
     summary: Summary
     tax: Tax
     tax_included: "Tax (incl.)"

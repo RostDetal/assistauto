@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160421043654) do
+ActiveRecord::Schema.define(version: 20160514074539) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -297,6 +297,17 @@ ActiveRecord::Schema.define(version: 20160421043654) do
   end
 
   add_index "spree_orders_promotions", ["order_id", "promotion_id"], name: "index_spree_orders_promotions_on_order_id_and_promotion_id"
+
+  create_table "spree_partners", force: :cascade do |t|
+    t.string   "name"
+    t.string   "api_url"
+    t.string   "api_login"
+    t.string   "api_pass"
+    t.integer  "partner_stock_id"
+    t.integer  "base_stock_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
 
   create_table "spree_payment_capture_events", force: :cascade do |t|
     t.decimal  "amount",     precision: 10, scale: 2, default: 0.0

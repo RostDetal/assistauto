@@ -4,5 +4,5 @@
   <%= configurations_sidebar_menu_item(Spree.t(:assistauto_blog), "#") if can? :manage, Spree::Config %>
   <%= configurations_sidebar_menu_item(Spree.t(:assistauto_vacancies), "#") if can? :manage, Spree::Config %>
   <%= configurations_sidebar_menu_item(Spree.t(:assistauto_events),"#") if can? :manage, Spree::Config %>
-  <%= configurations_sidebar_menu_item(Spree.t(:assistauto_partners), "#") if can? :manage, Spree::Config %>
+  <%= configurations_sidebar_menu_item(Spree.t(:assistauto_partners), spree.admin_partners_path) if can? :manage, Spree::Partner %>
 </ul>

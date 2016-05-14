@@ -1,0 +1,16 @@
+<% content_for :page_title do %>
+  <%= Spree.t(:new_partner) %>
+<% end %>
+
+<% content_for :page_actions do %>
+  <%= link_to_with_icon 'arrow-left', Spree.t(:back_to_resource_list, resource: Spree::Partner.model_name.human), admin_partners_path, class: 'btn btn-default' %>
+<% end %>
+
+<%= render :partial => 'spree/admin/shared/error_messages', :locals => { :target => @partners } %>
+
+<%= form_for [:admin, @partner] do |f| %>
+  <fieldset>
+    <%= render :partial => 'form', :locals => { :f => f } %>
+    <%= render :partial => 'spree/admin/shared/new_resource_links' %>
+  </fieldset>
+<% end %>
