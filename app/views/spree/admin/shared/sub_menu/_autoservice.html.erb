@@ -1,8 +1,8 @@
 <ul data-hook="admin_configurations_sidebar_menu" class="collapse nav nav-pills nav-stacked" id="sidebar-autoservice">
   <%= configurations_sidebar_menu_item(Spree.t(:assistauto_settings), spree.edit_admin_autoservice_settings_path) if can? :manage, Spree::Config %>
+  <%= configurations_sidebar_menu_item(Spree.t(:assistauto_partners), spree.admin_partners_path) if can? :manage, Spree::Partner %>
   <%= configurations_sidebar_menu_item(Spree.t(:assistauto_bookin), "#") if can? :manage, Spree::Config %>
   <%= configurations_sidebar_menu_item(Spree.t(:assistauto_blog), "#") if can? :manage, Spree::Config %>
   <%= configurations_sidebar_menu_item(Spree.t(:assistauto_vacancies), "#") if can? :manage, Spree::Config %>
   <%= configurations_sidebar_menu_item(Spree.t(:assistauto_events),"#") if can? :manage, Spree::Config %>
-  <%= configurations_sidebar_menu_item(Spree.t(:assistauto_partners), spree.admin_partners_path) if can? :manage, Spree::Partner %>
 </ul>
