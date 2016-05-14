@@ -47,6 +47,8 @@ ru:
     api_url: 'API URL'
     login: 'Имя пользователя'
     pass: 'Пароль'
+    store: 'ID Склада поставщика'
+    base_store: 'ID Центрального склада'
   auto:
     service:
       name: 'Автосервис'

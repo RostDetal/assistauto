@@ -66,7 +66,7 @@ end
 
 Spree::Core::Engine.routes.draw do
   namespace :admin do
-    resource :autoservice_settings do
-    end
+    resource :autoservice_settings
+    resources :partners
   end
 end
