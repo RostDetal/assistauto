@@ -36,6 +36,9 @@ ru:
   global:
     work_time: 'Режим работы'
     sku: 'Артикул'
+    brand: 'Брэнд'
+    weight: 'Вес'
+    deliveryPeriod: 'Время доставки'
 
   devise:
     failure:

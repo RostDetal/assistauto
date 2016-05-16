@@ -12,7 +12,7 @@ Spree::Product.class_eval do
 
   def slug_candidates
     [
-        [trans_name, :id]
+        [trans_name, :brand]
     ]
   end
 

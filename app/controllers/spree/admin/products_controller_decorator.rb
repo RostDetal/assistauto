@@ -70,6 +70,15 @@ Spree::Admin::ProductsController.class_eval do
     params[:product][:sku] = @filtered_stock[0]['numberFix']
     params[:product][:weight] = @filtered_stock[0]['weight']
     params[:product][:shipping_category_id] = Spree::ShippingCategory.first.id
+
+    params[:product][:product_properties_attributes] = []
+    params[:product][:product_properties_attributes] << {:property_name => I18n.t('global.brand'), :value=>@filtered_stock[0]['brand'],:position=>1}
+    params[:product][:product_properties_attributes] << {:property_name => I18n.t('global.weight'), :value=>@filtered_stock[0]['weight'],:position=>2}
+    params[:product][:product_properties_attributes] << {:property_name => I18n.t('global.deliveryPeriod'), :value=>get_days(@filtered_stock[0]['deliveryPeriod']),:position=>3}
+
+
+    puts permitted_product_attributes
+
     @product = Spree::Core::Importer::Product.new(nil, product_params, {}).create
 
     if @product.persisted?
@@ -80,7 +89,13 @@ Spree::Admin::ProductsController.class_eval do
 
   end
 
+  def get_days(hours)
+    hours = hours/24
+  end
 
+  def get_return_state
+    state
+  end
 
   def product_params
     params.require(:product).permit(permitted_product_attributes)
