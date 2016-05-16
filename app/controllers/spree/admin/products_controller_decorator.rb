@@ -17,6 +17,15 @@ Spree::Admin::ProductsController.class_eval do
       oem_number = spreadsheet.cell(i, 'E').to_s #Оригинальный номер
       applicability = spreadsheet.cell(i, 'F').to_s #Применяемость
 
+
+      if(sku.length>0)
+        if sku.include? '.0'
+          sku.slice! ".0"
+        end
+        temp = sku.delete(' ').delete('-').delete('.').delete('/')
+        sku = temp
+      end
+
       add_product_from_price(name, sku, brand, oem_number, applicability)
     end
 
@@ -32,6 +41,8 @@ Spree::Admin::ProductsController.class_eval do
     params[:product][:meta_keywords] = name
     params[:product][:price] = 0
     params[:product][:sku] = sku
+    params[:product][:brand] = brand
+    params[:product][:applicability] = applicability
     params[:product][:shipping_category_id] = Spree::ShippingCategory.first.id
 
     params[:product][:product_properties_attributes] = []
