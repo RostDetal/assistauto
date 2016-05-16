@@ -16,6 +16,11 @@
       <%=text_field(:product, :applicability, class: 'form-control', placeholder: "Применимость...")%>
       <%=button_tag "Добавить" , class: "btn btn-success"%>
   <%end%>
+
+  <%= form_tag admin_products_import_price_path, multipart: true do %>
+      <%= file_field_tag :file %>
+      <%= submit_tag "Import" %>
+  <% end %>
 </div>
 
 <% content_for :table_filter do %>

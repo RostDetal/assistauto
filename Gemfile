@@ -57,4 +57,6 @@ gem 'spree_gateway', '~> 3.1.0.rc1'
 # https://github.com/httprb/http
 gem 'httparty'
 gem 'translit'
+gem 'iconv'
+gem 'roo-xls'
 

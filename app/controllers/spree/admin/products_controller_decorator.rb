@@ -1,9 +1,57 @@
 Spree::Admin::ProductsController.class_eval do
   require 'json'
 
+
   def index
     @partners = Spree::Partner.all.uniq
     @taxons = Spree::Taxon.all.uniq
+  end
+
+  def import_price
+    spreadsheet = open_spreadsheet(params[:file])
+    (5..spreadsheet.last_row).each do |i|
+
+      name = spreadsheet.cell(i, 'B').to_s #Наименование
+      sku = spreadsheet.cell(i, 'C').to_s #Артикул
+      brand = spreadsheet.cell(i, 'D').to_s #Изготовитель
+      oem_number = spreadsheet.cell(i, 'E').to_s #Оригинальный номер
+      applicability = spreadsheet.cell(i, 'F').to_s #Применяемость
+
+      add_product_from_price(name, sku, brand, oem_number, applicability)
+    end
+
+    redirect_to action: :index
+  end
+
+  def add_product_from_price(name, sku, brand, oem, applicability)
+    params[:product] = {}
+    params[:product][:available_on] ||= Time.now
+    params[:product][:name] = name
+    params[:product][:description] = name
+    params[:product][:meta_description] = name
+    params[:product][:meta_keywords] = name
+    params[:product][:price] = 0
+    params[:product][:sku] = sku
+    params[:product][:shipping_category_id] = Spree::ShippingCategory.first.id
+
+    params[:product][:product_properties_attributes] = []
+    params[:product][:product_properties_attributes] << {:property_name => I18n.t('global.brand'),          :value=>brand,:position=>1}
+    params[:product][:product_properties_attributes] << {:property_name => I18n.t('global.originalNumber'), :value=>oem,:position=>2}
+    params[:product][:product_properties_attributes] << {:property_name => I18n.t('global.applicability'), :value=>applicability,:position=>3}
+
+    @product = Spree::Core::Importer::Product.new(nil, product_params, {}).create
+
+  end
+
+  def open_spreadsheet(file)
+
+    puts file
+    case File.extname(file.original_filename)
+      when ".csv" then Roo::Csv.new(file.path, nil, :ignore)
+      when ".xls" then Roo::Excel.new(file.path, {})
+      when ".xlsx" then Roo::Excelx.new(file.path, {})
+      else raise "Unknown file type: #{file.original_filename}"
+    end
   end
 
 
