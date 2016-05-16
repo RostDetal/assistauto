@@ -17,7 +17,8 @@
       <%=button_tag "Добавить" , class: "btn btn-success"%>
   <%end%>
 
-  <%= form_tag admin_products_import_price_path, multipart: true do %>
+  <%= form_tag admin_products_import_price_path, multipart: true, class:"form-inline" do %>
+      <%=collection_select(:product, :partner_id, Spree::Partner.all, :id, :partner_name, { include_blank: "Выберите склад..." }, {style: 'width:180px', class: 'select2 form-group', disabled: (cannot? :edit, Spree::ShippingCategory) })%>
       <%= file_field_tag :file %>
       <%= submit_tag "Import" %>
   <% end %>

@@ -26,6 +26,14 @@ Spree::Admin::ProductsController.class_eval do
         sku = temp
       end
 
+      if(oem_number.length>0)
+        if oem_number.include? '.0'
+          oem_number.slice! ".0"
+        end
+        temp = oem_number.delete(' ').delete('-').delete('.').delete('/')
+        oem_number = temp
+      end
+
       add_product_from_price(name, sku, brand, oem_number, applicability)
     end
 
@@ -33,7 +41,7 @@ Spree::Admin::ProductsController.class_eval do
   end
 
   def add_product_from_price(name, sku, brand, oem, applicability)
-    params[:product] = {}
+    # params[:product] = {}
     params[:product][:available_on] ||= Time.now
     params[:product][:name] = name
     params[:product][:description] = name
@@ -42,6 +50,7 @@ Spree::Admin::ProductsController.class_eval do
     params[:product][:price] = 0
     params[:product][:sku] = sku
     params[:product][:brand] = brand
+    params[:product][:oem_number] = oem
     params[:product][:applicability] = applicability
     params[:product][:shipping_category_id] = Spree::ShippingCategory.first.id
 
