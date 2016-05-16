@@ -32,7 +32,7 @@ Spree::Admin::ProductsController.class_eval do
     if @filtered_stock.length > 0
       add_partner_product
     else
-      flash[:error] = "После фильтрации складов не найдено ни одного товара!"
+      flash[:error] = "Не получилось получить экземпляр товара после всех фильтраций!"
     end
 
     redirect_to action: :index
@@ -47,9 +47,6 @@ Spree::Admin::ProductsController.class_eval do
   def get_product_info_url
     pattern = "/search/articles?"
     searchable_sku = correct_sku
-
-    puts "SKU: "+searchable_sku
-
     searchable_brand = params[:product][:brand]
     url = "#{partner.url}#{pattern}userlogin=#{partner.login}&userpsw=#{partner.pass}&number=#{searchable_sku}&brand=#{searchable_brand}"
   end
@@ -59,13 +56,14 @@ Spree::Admin::ProductsController.class_eval do
   end
 
   def correct_sku
-    sku = params[:product][:sku].delete(' ').delete('-').delete('.')
+    sku = params[:product][:sku].delete(' ').delete('-').delete('.').delete('/')
   end
 
 
   def add_partner_product
     params[:product][:available_on] ||= Time.now
     params[:product][:name] = @filtered_stock[0]['description']
+    params[:product][:description] = @filtered_stock[0]['description']
     params[:product][:meta_description] = @filtered_stock[0]['description']
     params[:product][:meta_keywords] = @filtered_stock[0]['description']
     params[:product][:price] = @filtered_stock[0]['price']

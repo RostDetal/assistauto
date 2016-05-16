@@ -11,7 +11,7 @@
 
 
   <%= form_tag(admin_products_add_from_partner_path, method: :get, class:"form-inline") do %>
-      <%=collection_select(:product, :partner_id, Spree::Partner.all, :id, :partner_name, { include_blank: Spree.t('match_choices.none') }, {style: 'width:300px', class: 'select2 form-group', disabled: (cannot? :edit, Spree::ShippingCategory) })%>
+      <%=collection_select(:product, :partner_id, Spree::Partner.all, :id, :partner_name, { include_blank: "Выберите склад..." }, {style: 'width:300px', class: 'select2 form-group', disabled: (cannot? :edit, Spree::ShippingCategory) })%>
       <%=text_field(:product, :sku, class: 'form-control', placeholder: "Введите артикул...")%>
       <%=text_field(:product, :brand, class: 'form-control', placeholder: "Введите марку товара...")%>
       <%=button_tag "Добавить" , class: "btn btn-success"%>
