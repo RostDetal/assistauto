@@ -68,5 +68,9 @@ Spree::Core::Engine.routes.draw do
   namespace :admin do
     resource :autoservice_settings
     resources :partners
+    get 'products/add_from_partner', to: "products#create_product_partner"
   end
+
+
+
 end

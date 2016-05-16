@@ -10,12 +10,13 @@
 <div class="row" style="border-radius: 4px; background-color: #eeeeee;padding: 10px 10px;">
 
 
-  <form class="form-inline">
-    <%=collection_select(:product, :partner_id, Spree::Partner.all, :id, :partner_name, { include_blank: Spree.t('match_choices.none') }, {style: 'width:300px', class: 'select2 form-group', disabled: (cannot? :edit, Spree::ShippingCategory) })%>
-    <%=text_field(:product, :code, class: 'form-control', placeholder: "Введите артикул...")%>
-    <%=text_field(:product, :brand, class: 'form-control', placeholder: "Введите марку товара...")%>
-    <%=button_tag "Добавить" , class: "btn btn-success"%>
-  </form>
+  <%= form_tag(admin_products_add_from_partner_path, method: :get, class:"form-inline") do %>
+      <%=collection_select(:product, :partner_id, Spree::Partner.all, :id, :partner_name, { include_blank: Spree.t('match_choices.none') }, {style: 'width:300px', class: 'select2 form-group', disabled: (cannot? :edit, Spree::ShippingCategory) })%>
+      <%=text_field(:product, :sku, class: 'form-control', placeholder: "Введите артикул...")%>
+      <%=text_field(:product, :brand, class: 'form-control', placeholder: "Введите марку товара...")%>
+      <%=button_tag "Добавить" , class: "btn btn-success"%>
+  <%end%>
+
 </div>
 
 <% content_for :table_filter do %>
@@ -68,6 +69,7 @@
       </tr>
     </thead>
     <tbody>
+
       <% @collection.each do |product| %>
           <tr <%== "style='color: red;'" if product.deleted? %> id="<%= spree_dom_id product %>" data-hook="admin_products_index_rows" class="<%= cycle('odd', 'even') %>">
             <td class="sku"><%= product.sku rescue '' %></td>
