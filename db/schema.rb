@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160516034942) do
+ActiveRecord::Schema.define(version: 20160516060910) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -434,6 +434,8 @@ ActiveRecord::Schema.define(version: 20160516034942) do
     t.integer  "partner_id"
     t.string   "brand"
     t.datetime "discontinue_on"
+    t.string   "oem_number"
+    t.string   "applicability"
   end
 
   add_index "spree_products", ["available_on"], name: "index_spree_products_on_available_on"

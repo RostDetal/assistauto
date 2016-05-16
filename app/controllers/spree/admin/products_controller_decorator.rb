@@ -73,9 +73,10 @@ Spree::Admin::ProductsController.class_eval do
 
     params[:product][:product_properties_attributes] = []
     params[:product][:product_properties_attributes] << {:property_name => I18n.t('global.brand'),          :value=>@filtered_stock[0]['brand'],:position=>1}
-    params[:product][:product_properties_attributes] << {:property_name => I18n.t('global.originalNumber'), :value=>@filtered_stock[0]['number'],:position=>2}
-    params[:product][:product_properties_attributes] << {:property_name => I18n.t('global.weight'),         :value=>@filtered_stock[0]['weight'],:position=>3}
-    # params[:product][:product_properties_attributes] << {:property_name => I18n.t('global.deliveryPeriod'), :value=>get_days(@filtered_stock[0]['deliveryPeriod']),:position=>4}
+    params[:product][:product_properties_attributes] << {:property_name => I18n.t('global.originalNumber'), :value=>params[:product][:oem_number],:position=>2}
+    params[:product][:product_properties_attributes] << {:property_name => I18n.t('global.applicability'), :value=>params[:product][:applicability],:position=>3}
+    params[:product][:product_properties_attributes] << {:property_name => I18n.t('global.weight'),         :value=>@filtered_stock[0]['weight'],:position=>4}
+    # params[:product][:product_properties_attributes] << {:property_name => I18n.t('global.deliveryPeriod'), :value=>get_days(@filtered_stock[0]['deliveryPeriod']),:position=>5}
     params[:product][:product_properties_attributes] << {:property_name => I18n.t('global.status'),         :value=>I18n.t('global.can_return', :count=>@filtered_stock[0]['noReturn']),:position=>4}
 
 

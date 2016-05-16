@@ -18,5 +18,5 @@ end
 
 
 Spree.user_class = "Spree::User"
-Spree::PermittedAttributes.product_attributes << [:brand, :partner_id]
+Spree::PermittedAttributes.product_attributes << [:brand, :partner_id, :oem_number, :applicability]
 

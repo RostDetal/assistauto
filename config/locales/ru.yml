@@ -40,6 +40,7 @@ ru:
     weight: 'Вес'
     deliveryPeriod: 'Время доставки'
     originalNumber: 'Оригинальный номер'
+    applicability: 'Применимость'
     status: 'Тип товара'
     can_return:
       one: "Не подлежит возврату"
