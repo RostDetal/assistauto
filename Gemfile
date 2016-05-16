@@ -49,9 +49,10 @@ group :production do
   gem 'puma'
 end
 gem 'slim-rails'
-gem 'spree', '~> 3.0.8'
-gem 'spree_gateway', '~> 3.0.0'
-gem 'spree_auth_devise', '~> 3.0.5'
+
+gem 'spree', '~> 3.1.0.rc1'
+gem 'spree_auth_devise', '~> 3.1.0.rc1'
+gem 'spree_gateway', '~> 3.1.0.rc1'
 
 # https://github.com/httprb/http
 gem 'httparty'
