@@ -39,6 +39,18 @@ ru:
     brand: 'Брэнд'
     weight: 'Вес'
     deliveryPeriod: 'Время доставки'
+    originalNumber: 'Оригинальный номер'
+    status: 'Тип товара'
+    can_return:
+      one: "Не подлежит возврату"
+      zero: 'Подлежит возврату'
+
+    delivery_days:
+      zero: 'На складе'
+      one: '1 день'
+      few: ' %{count} дня'
+      many: '%{count} дней'
+      other: 'По заказ'
 
   devise:
     failure:
@@ -616,7 +628,7 @@ ru:
     categories: Categories
     category: Category
     charged: Charged
-    checkout: Checkout
+    checkout: 'Оформление заказа'
     choose_a_customer: Choose a customer
     choose_a_taxon_to_sort_products_for: "Choose a taxon to sort products for"
     choose_currency: Choose Currency
@@ -849,7 +861,7 @@ ru:
     inventory_state: Inventory State
     is_not_available_to_shipment_address: is not available to shipment address
     iso_name: Iso Name
-    item: Item
+    item: 'Товар'
     item_description: Item Description
     item_total: Item Total
     item_total_rule:
@@ -1159,13 +1171,13 @@ ru:
     promotions: 'Акции'
     promotion_uses: Promotion uses
     propagate_all_variants: Propagate all variants
-    properties: Properties
+    properties: 'Свойства'
     property: Property
     prototype: Prototype
     prototypes: Prototypes
     provider: Provider
     provider_settings_warning: If you are changing the provider type, you must save first before you can edit the provider settings
-    qty: Qty
+    qty: 'Количество'
     quantity: 'Кол-во'
     quantity_returned: Quantity Returned
     quantity_shipped: Quantity Shipped
@@ -1308,7 +1320,7 @@ ru:
     shipping_price_sack: Price sack
     shipping_total: Shipping total
     shop_by_taxonomy: 'Товары по %{taxonomy}'
-    shopping_cart: Shopping Cart
+    shopping_cart: 'Корзина товаров'
     show: 'Показать'
     show_active: 'Показать активные'
     show_deleted: Show Deleted
@@ -1425,7 +1437,7 @@ ru:
     tiered_percent: Tiered Percent
     time: Time
     to_add_variants_you_must_first_define: To add variants, you must first define
-    total: Total
+    total: 'Итого'
     total_per_item: Total per item
     total_pre_tax_refund: Total Pre-Tax Refund
     total_price: Total price
@@ -1448,7 +1460,7 @@ ru:
     unlock: Unlock
     unrecognized_card_type: Unrecognized card type
     unshippable_items: Unshippable Items
-    update: Update
+    update: 'Обновить'
     updating: Updating
     usage_limit: Usage Limit
     use_app_default: Use App Default
