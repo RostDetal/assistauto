@@ -12,7 +12,7 @@ module Assist
       end
 
       def self.get_price(product)
-        if product.price === 0 || Time.now >= product.updated_at + 1.day
+        if (product.price === 0 || Time.now >= product.updated_at + 1.day) && !product.partner_id.nil?
           @product = product
           @partner = Spree::Partner.find_by_id(product.partner_id)
           @brand = @product.brand
