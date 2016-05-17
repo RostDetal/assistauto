@@ -14,12 +14,17 @@ Spree::Product.class_eval do
 
   def slug_candidates
     [
-        [trans_name, :brand]
+        trans_name,
+        trans_name + [:brand, :sku]
     ]
   end
 
 
+  private
+
   def trans_name
-   name = Translit.convert(self.name, :english)
+    result = [Translit.convert(self.name, :english)]
   end
+
+
 end

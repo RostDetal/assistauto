@@ -17,7 +17,6 @@ Spree::Admin::ProductsController.class_eval do
       oem_number = spreadsheet.cell(i, 'E').to_s #Оригинальный номер
       applicability = spreadsheet.cell(i, 'F').to_s #Применяемость
 
-
       if(sku.length>0)
         if sku.include? '.0'
           sku.slice! ".0"
