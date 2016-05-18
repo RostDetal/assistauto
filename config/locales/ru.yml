@@ -147,7 +147,7 @@ ru:
         completed_at: Completed At
         coupon_code: 'Код купона'
         created_at: Order Date
-        email: Customer E-Mail
+        email: 'Ваш E-Mail'
         ip_address: IP Address
         item_total: Item Total
         number: Number
@@ -724,7 +724,7 @@ ru:
     delete: Delete
     delete_from_taxon: Delete From Taxon
     deleted_variants_present: Some line items in this order have products that are no longer available.
-    delivery: Delivery
+    delivery: 'Доставка'
     depth: Depth
     details: Details
     description: Description
@@ -1006,22 +1006,22 @@ ru:
     order: Order
     order_adjustments: Order adjustments
     order_already_updated: The order has already been updated.
-    order_approved: Order approved
-    order_canceled: Order canceled
+    order_approved: 'Заказ подтвержден'
+    order_canceled: 'Заказ отменен'
     order_details: Order Details
     order_email_resent: Order Email Resent
-    order_information: Order Information
+    order_information: 'Информация по заказу'
     order_line_items: Order Line Items
     order_mailer:
       cancel_email:
-        dear_customer: Dear Customer,
-        instructions: Your order has been CANCELED.  Please retain this cancellation information for your records.
+        dear_customer: 'Уважаемый покупатель,'
+        instructions: 'Ваш заказ был отменен.  Please retain this cancellation information for your records.'
         order_summary_canceled: Order Summary [CANCELED]
-        subject: Cancellation of Order
+        subject: 'Отмена заказа'
         subtotal: ! 'Subtotal:'
         total: ! 'Order Total:'
       confirm_email:
-        dear_customer: Dear Customer,
+        dear_customer: 'Уважаемый покупатель,'
         instructions: Please review and retain the following order information for your records.
         order_summary: Order Summary
         subject: Order Confirmation
@@ -1029,19 +1029,19 @@ ru:
         thanks: Thank you for your business.
         total: ! 'Order Total:'
     order_not_found: We couldn't find your order. Please try that action again.
-    order_number: Order %{number}
+    order_number: 'Заказ %{number}'
     order_processed_successfully: Your order has been processed successfully
     order_resumed: Order resumed
     order_state:
-      address: address
+      address: 'Адрес'
       awaiting_return: awaiting return
       canceled: canceled
-      cart: cart
+      cart: 'Корзина'
       considered_risky: considered risky
-      complete: complete
+      complete: 'Завершение'
       confirm: confirm
-      delivery: delivery
-      payment: payment
+      delivery: 'Доставка'
+      payment: 'Оплата'
       resumed: resumed
       returned: returned
     order_summary: Order Summary
@@ -1266,7 +1266,7 @@ ru:
     say_yes: 'Да'
     scope: Scope
     search: Search
-    search_results: Search results for '%{keywords}'
+    search_results: 'Результаты поиска по запросу: %{keywords}'
     searching: Searching
     secure_connection_type: Secure Connection Type
     security_settings: Security Settings
@@ -1343,7 +1343,7 @@ ru:
     states: States
     state_machine_states:
       accepted: Accepted
-      address: Address
+      address: 'Адрес'
       authorized: Authorized
       awaiting: Awaiting
       awaiting_return: Awaiting return
