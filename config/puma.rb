@@ -11,7 +11,7 @@ if rails_env!="development"
   activate_control_app "#{shared_dir}/tmp/sockets/pumactl.sock"
 
   threads 2, 16
-  workers 2
+  workers 4
 
   bind "unix://#{shared_dir}/tmp/sockets/puma.sock"
   daemonize true
