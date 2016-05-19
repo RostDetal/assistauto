@@ -18,7 +18,7 @@ set :term_mode, nil
 
 # Manually create these paths in shared/ (eg: shared/config/database.yml) in your server.
 # They will be linked in the 'deploy:link_shared_paths' step.
-set :shared_paths, ['config/database.yml', 'config/application.yml', 'tmp/pids', 'tmp/sockets', 'public/system']
+set :shared_paths, ['config/database.yml', 'config/application.yml','config/secrets.yml', 'tmp/pids', 'tmp/sockets', 'public/system']
 
 # Optional settings:
 set :user, 'rvm_user'    # Username in the server to SSH to.
