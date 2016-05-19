@@ -3,12 +3,9 @@ require 'mina/rails'
 require 'mina/git'
 require 'mina/rvm'    # for rvm support. (http://rvm.io)
 require 'mina/puma'
-
+require 'mina/multistage'
 
 set :application, "assistauto"
-set :deploy_to, '/home/rvm_user/assistauto_production'
-set :branch, 'master'
-set :rails_env, 'production'
 set :domain, '37.230.117.232'
 set :repository, 'git@github.com:RostDetal/assistauto.git'
 set :app_path, lambda { "#{deploy_to}/#{current_path}" }
