@@ -5,8 +5,8 @@ namespace :nginx do
       nginx_avail_site_conf = "/etc/nginx/sites-available/#{application}_#{rails_env}.conf"
       nginx_enabled_site_conf = "/etc/nginx/sites-enabled/#{application}_#{rails_env}.conf"
       queue %[echo "-----> Copуing nginx conf files"]
-      queue %[cp -f #{local_conf} #{nginx_avail_site_conf}]
-      queue %[ln -nfs #{nginx_avail_site_conf} #{nginx_enabled_site_conf}]
+      queue %[sudo cp -f #{local_conf} #{nginx_avail_site_conf}]
+      queue %[sudo ln -nfs #{nginx_avail_site_conf} #{nginx_enabled_site_conf}]
       queue %[echo "-----> Copуing nginx conf files done"]
   end
 
