@@ -106,7 +106,6 @@ task :deploy => :environment do
       invoke 'puma:restart'
       invoke :'nginx:update_site_config'
       invoke :'nginx:reload'
-      invoke :'cache:clear'
     end
   end
 end
