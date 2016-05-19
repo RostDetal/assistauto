@@ -14,5 +14,5 @@ if rails_env!="development"
   workers 4
 
   bind "unix://#{shared_dir}/tmp/sockets/puma.sock"
-  daemonize true
+  # daemonize true
 end
