@@ -6,6 +6,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+
 //= require spree/backend
+//= require spree/backend/admin/sidebar_check.js
 
 //= require_tree .
