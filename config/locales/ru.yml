@@ -155,9 +155,9 @@ ru:
         email: 'Ваш E-Mail'
         ip_address: IP Address
         item_total: Item Total
-        number: Number
-        payment_state: Payment State
-        shipment_state: Shipment State
+        number: 'Заказ №'
+        payment_state: 'Состоние оплаты'
+        shipment_state: 'Состояние доставки'
         special_instructions: Special Instructions
         state: State
         total: 'Итого'
@@ -608,7 +608,7 @@ ru:
     base_percent: Base Percent
     bill_address: Bill Address
     billing: Billing
-    billing_address: Billing Address
+    billing_address: 'Адрес'
     both: Both
     calculated_reimbursements: Calculated Reimbursements
     calculator: Calculator
@@ -640,7 +640,7 @@ ru:
     choose_currency: Choose Currency
     choose_dashboard_locale: Choose Dashboard Locale
     choose_location: Choose location
-    city: City
+    city: 'Город'
     clear_cache: Clear Cache
     clear_cache_ok: Cache was flushed
     clear_cache_warning: Clearing cache will temporarily reduce the performance of your store.
@@ -665,7 +665,7 @@ ru:
     could_not_create_stock_movement: There was a problem saving this stock movement. Please try again.
     count_on_hand: Count On Hand
     countries: Countries
-    country: Country
+    country: 'Страна'
     country_based: Country Based
     country_name: Name
     country_names:
@@ -804,7 +804,7 @@ ru:
     find_a_taxon: Find a Taxon
     finalized: Finalized
     first_item: First Item
-    first_name: First Name
+    first_name: 'Имя'
     first_name_begins_with: First Name Begins With
     flat_percent: Flat Percent
     flat_rate_per_order: Flat Rate
@@ -869,7 +869,7 @@ ru:
     iso_name: Iso Name
     item: 'Товар'
     item_description: Item Description
-    item_total: Item Total
+    item_total: 'Итого по товарам'
     item_total_rule:
       operators:
         gt: greater than
@@ -883,7 +883,7 @@ ru:
     jirafe: Jirafe
     landing_page_rule:
       path: Path
-    last_name: Last Name
+    last_name: 'Фамилия'
     last_name_begins_with: Last Name Begins With
     learn_more: 'Подробнее..'
     lifetime_stats: Lifetime Stats
@@ -970,7 +970,7 @@ ru:
     new_zone: New Zone
     next: Next
     no_actions_added: No actions added
-    no_payment_found: No payment found
+    no_payment_found: 'Не выбран способ платежа'
     no_pending_payments: No pending payments
     no_products_found: 'Не найдено товаров'
     no_results: No results
@@ -1035,7 +1035,7 @@ ru:
         total: ! 'Order Total:'
     order_not_found: We couldn't find your order. Please try that action again.
     order_number: 'Заказ %{number}'
-    order_processed_successfully: Your order has been processed successfully
+    order_processed_successfully: 'Ваш заказ был успешно обработан'
     order_resumed: Order resumed
     order_state:
       address: 'Адрес'
@@ -1049,9 +1049,9 @@ ru:
       payment: 'Оплата'
       resumed: resumed
       returned: returned
-    order_summary: Order Summary
+    order_summary: 'По заказу'
     order_sure_want_to: Are you sure you want to %{event} this order?
-    order_total: Order Total
+    order_total: 'Итого по заказу'
     order_updated: Order Updated
     orders: 'Заказы'
     out_of_stock: Out of Stock
@@ -1067,7 +1067,7 @@ ru:
     pay: pay
     payment: Payment
     payment_could_not_be_created: Payment could not be created.
-    payment_information: Payment Information
+    payment_information: 'Способ оплаты'
     payment_method: Payment Method
     payment_methods: Payment Methods
     payment_method_not_supported: That payment method is unsupported. Please choose another one.
@@ -1091,7 +1091,7 @@ ru:
     percent_per_item: Percent Per Item
     permalink: Permalink
     pending: Pending
-    phone: Phone
+    phone: 'Телефон'
     place_order: Place Order
     please_define_payment_methods: Please define some payment methods first.
     please_enter_reasonable_quantity: Please enter a reasonable quantity.
@@ -1311,20 +1311,20 @@ ru:
       shipped: shipped
     shipment_transfer_success: 'Variants successfully transferred'
     shipment_transfer_error: 'There was an error transferring variants'
-    shipments: Shipments
+    shipments: 'Отгрузка'
     shipped: Shipped
-    shipping: Shipping
-    shipping_address: Shipping Address
+    shipping: 'Выбранный способ доставки'
+    shipping_address: 'Адрес доставки'
     shipping_categories: Shipping Categories
     shipping_category: Shipping Category
     shipping_flat_rate_per_item: Flat rate per package item
     shipping_flat_rate_per_order: Flat rate
     shipping_flexible_rate: Flexible Rate per package item
     shipping_instructions: Shipping Instructions
-    shipping_method: Shipping Method
+    shipping_method: 'Способ доставки'
     shipping_methods: Shipping Methods
     shipping_price_sack: Price sack
-    shipping_total: Shipping total
+    shipping_total: 'Итого за доставку'
     shop_by_taxonomy: 'Товары по %{taxonomy}'
     shopping_cart: 'Корзина товаров'
     show: 'Показать'
@@ -1343,7 +1343,7 @@ ru:
     ssl:
       change_protocol: "Please switch to using HTTP (rather than HTTPS) and retry this request."
     start: Start
-    state: State
+    state: 'Область'
     state_based: State Based
     states: States
     state_machine_states:
@@ -1394,9 +1394,9 @@ ru:
     stock_transfers: Stock Transfers
     stop: Stop
     store: Store
-    street_address: Street Address
+    street_address: 'Улица проживания'
     street_address_2: Street Address (cont'd)
-    subtotal: Subtotal
+    subtotal: 'Промежуточный итог'
     subtract: Subtract
     success: Success
     successfully_created: ! '%{resource} был успешно создан!'
@@ -1433,7 +1433,7 @@ ru:
         message: If you have received this email, then your email settings are correct.
         subject: Test Mail
     test_mode: Test Mode
-    thank_you_for_your_order: Thank you for your business.  Please print out a copy of this confirmation page for your records.
+    thank_you_for_your_order: 'Благодарим за заказ.  Пожалуйстра, сохраните или распечатейте информцию о заказе.'
     there_are_no_items_for_this_order: There are no items for this order. Please add an item to the order to continue.
     there_were_problems_with_the_following_fields: There were problems with the following fields
     this_order_has_already_received_a_refund: This order has already received a refund
@@ -1501,7 +1501,7 @@ ru:
     you_have_no_orders_yet: 'У вас не было заказов'
     your_cart_is_empty: 'Ваша корзина пуста'
     your_order_is_empty_add_product: Your order is empty, please search for and add a product above
-    zip: Zip
+    zip: 'Почтовый индекс'
     zipcode: Zip Code
     zone: Zone
     zones: Zones
