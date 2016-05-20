@@ -98,7 +98,7 @@ module Assist
       if response.success?
 
       else
-        flash[:error] = "Не удалось получить данные по товару. Попробуйте еще!"
+        puts "Не удалось получить данные по товару:"+@sku.to_s+" бренда: "+@brand.to_s+" Попробуйте еще!"
       end
 
       @json = JSON.parse(response.body)
