@@ -27,7 +27,7 @@ module Assist
     end
 
     # Get data from partner and update product fields
-    def self.get_price(product)
+    def self.get_product_update(product)
       if (product.price === 0 || Time.now >= product.updated_at + 1.day) && !product.partner_id.nil?
         @product = product
         @partner = Spree::Partner.find_by_id(product.partner_id)
@@ -35,7 +35,7 @@ module Assist
         @sku = @product.sku
         @response = get_product_data
 
-        if @response.length > 0
+        if @response && @response.length > 0
           update_product(@response)
         end
       end
@@ -66,7 +66,6 @@ module Assist
 
 
     private
-
 
     def self.open_spreadsheet(file)
       case File.extname(file.original_filename)
@@ -102,10 +101,16 @@ module Assist
       end
 
       @json = JSON.parse(response.body)
+      # из ответа ищем конкретно по артикулу и марке
       @filter_all = @json.select{|hash| hash['numberFix'] == clear(@sku) && hash['brand'].downcase == @brand.downcase}
+
+      # Дальше нам нужен склад южного бутово, пытаемся фильтровать и отсеять именно этот склад
       @filter_partner_stock = @filter_all.select{|hash| hash['distributorId'] == @partner.stock}
+
+      # на всякий случай сразу смотрим как и сос складом бутово, центральный склад
       @filter_main_stock = @filter_all.select{|hash| hash['distributorId'] == @partner.main_stock}
 
+      # делаем окончательную выборку и того что отфильтровали
       @filtered_stock = @filter_partner_stock.length>0 ? @filter_partner_stock : @filter_main_stock.length > 0 ? @filter_main_stock : @filter_all
     end
 

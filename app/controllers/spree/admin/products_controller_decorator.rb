@@ -31,7 +31,6 @@ Spree::Admin::ProductsController.class_eval do
 
     @filtered_stock = @filter_partner_stock.length>0 ? @filter_partner_stock : @filter_main_stock.length > 0 ? @filter_main_stock : @filter_all
 
-    puts @filter_all
 
     if @filter_all.length == 0
       flash[:error] = "После фильтрации не найдено ни одного товара по указанному бренду и коду товара!"
