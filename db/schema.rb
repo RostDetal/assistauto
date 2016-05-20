@@ -316,7 +316,7 @@ ActiveRecord::Schema.define(version: 20160520085336) do
     t.integer  "base_stock_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
-    t.decimal  "percents"
+    t.float    "percents"
   end
 
   create_table "spree_payment_capture_events", force: :cascade do |t|
