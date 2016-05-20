@@ -13,7 +13,7 @@ Spree::ProductsController.class_eval do
   private
 
   def try_update_product
-    Assist::PartnerProductProcessor.get_price(@product)
+    Assist::PartnerProductProcessor.get_product_update(@product)
   end
 
 end

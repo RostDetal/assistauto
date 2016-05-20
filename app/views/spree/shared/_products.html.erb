@@ -26,7 +26,7 @@
             <div class="panel-body text-center product-body">
               <%= link_to url, itemprop: "url" do %>
                 <%= small_image(product, itemprop: "image") %><br/>
-                <%= content_tag(:span, truncate(product.name, length: 50), class: 'info', itemprop: "name", title: product.name) %>
+                <%= content_tag(:span, truncate(product_name(product), length: 50), class: 'info', itemprop: "name", title: product.name) %>
               <% end %>
               <br/>
             </div>
