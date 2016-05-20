@@ -10,6 +10,11 @@
   </div>
 
   <div data-hook="name" class="form-group">
+    <%= f.label :percents, I18n.t('partner.percents') %>
+    <%= f.text_field :percents, :class => 'form-control' %>
+  </div>
+
+  <div data-hook="name" class="form-group">
     <%= f.label :api_login, I18n.t('partner.login') %>
     <%= f.text_field :api_login, :class => 'form-control' %>
   </div>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160516060910) do
+ActiveRecord::Schema.define(version: 20160520085336) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -316,6 +316,7 @@ ActiveRecord::Schema.define(version: 20160516060910) do
     t.integer  "base_stock_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.decimal  "percents"
   end
 
   create_table "spree_payment_capture_events", force: :cascade do |t|

@@ -65,6 +65,7 @@ ru:
   partner:
     api_url: 'API URL'
     login: 'Имя пользователя'
+    percents: 'Наценка, %'
     pass: 'Пароль'
     store: 'ID Склада поставщика'
     base_store: 'ID Центрального склада'
