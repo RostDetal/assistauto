@@ -24,6 +24,7 @@ ru:
     connection_refused: 'Соединение разъединено'
   date:
     formats:
+      long: "Давно"
       default: "Стандартный"
 
   views:
