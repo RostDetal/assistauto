@@ -74,6 +74,7 @@ Spree::Admin::ProductsController.class_eval do
     params[:product][:meta_description] = @filtered_stock[0]['description']
     params[:product][:meta_keywords] = @filtered_stock[0]['description']
     params[:product][:price] = @filtered_stock[0]['price']
+    params[:product][:cost_price] = @filtered_stock[0]['price']
     params[:product][:sku] = @filtered_stock[0]['numberFix']
     params[:product][:weight] = @filtered_stock[0]['weight']
     params[:product][:shipping_category_id] = Spree::ShippingCategory.first.id

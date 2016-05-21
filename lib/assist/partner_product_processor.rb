@@ -49,6 +49,7 @@ module Assist
       params[:product][:meta_description] = name
       params[:product][:meta_keywords] = name
       params[:product][:price] = 0
+      params[:product][:cost_price] = 0
       params[:product][:sku] = sku
       params[:product][:brand] = brand
       params[:product][:oem_number] = oem
@@ -76,6 +77,10 @@ module Assist
       end
     end
 
+    def self.calculate_price(price)
+      new_price = price + (price * (@partner.percents/100))
+    end
+
     def self.update_product(response)
       params = {}
 
@@ -84,7 +89,8 @@ module Assist
       params[:description] = response[0]['description']
       params[:meta_description] = response[0]['description']
       params[:meta_keywords] = response[0]['description']
-      params[:price] = response[0]['price']
+      params[:price] = calculate_price(response[0]['price'])
+      params[:cost_price] = response[0]['price']
       params[:sku] = response[0]['numberFix']
       params[:weight] = response[0]['weight']
 
