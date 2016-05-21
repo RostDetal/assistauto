@@ -33,6 +33,7 @@ ru:
       previous: 'Пред.'
       first: 'В начало'
       last: 'В конец'
+      truncate: '...'
 
   global:
     work_time: 'Режим работы'
@@ -476,6 +477,7 @@ ru:
         one: ! '1 error prohibited this %{resource} from being saved:'
         other: ! '%{count} errors prohibited this %{resource} from being saved:'
   spree:
+    can_show_home: 'Отображать на главной'
     assistauto: 'АсистАвто'
     assistauto_settings: 'Настройки'
     assistauto_blog: 'Блог'

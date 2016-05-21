@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160520085336) do
+ActiveRecord::Schema.define(version: 20160521193728) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -956,10 +956,11 @@ ActiveRecord::Schema.define(version: 20160520085336) do
   add_index "spree_tax_rates", ["zone_id"], name: "index_spree_tax_rates_on_zone_id"
 
   create_table "spree_taxonomies", force: :cascade do |t|
-    t.string   "name",                   null: false
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-    t.integer  "position",   default: 0
+    t.string   "name",                          null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.integer  "position",      default: 0
+    t.boolean  "can_show_home", default: false
   end
 
   add_index "spree_taxonomies", ["position"], name: "index_spree_taxonomies_on_position"
@@ -967,7 +968,7 @@ ActiveRecord::Schema.define(version: 20160520085336) do
   create_table "spree_taxons", force: :cascade do |t|
     t.integer  "parent_id"
     t.integer  "position",          default: 0
-    t.string   "name",                          null: false
+    t.string   "name",                              null: false
     t.string   "permalink"
     t.integer  "taxonomy_id"
     t.integer  "lft"
@@ -977,12 +978,13 @@ ActiveRecord::Schema.define(version: 20160520085336) do
     t.integer  "icon_file_size"
     t.datetime "icon_updated_at"
     t.text     "description"
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.string   "meta_title"
     t.string   "meta_description"
     t.string   "meta_keywords"
     t.integer  "depth"
+    t.boolean  "can_show",          default: false
   end
 
   add_index "spree_taxons", ["lft"], name: "index_spree_taxons_on_lft"
