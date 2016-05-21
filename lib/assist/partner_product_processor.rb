@@ -7,7 +7,25 @@ module Assist
       include Spree::Core::Engine.routes.url_helpers
       include Spree::PermittedAttributes
       include Spree::Core::ControllerHelpers::StrongParameters
+
+
+      def add_single(params)
+
+        @partner = Spree::Partner.find_by_id(params[:product][:partner_id])
+        @brand = params[:product][:brand]
+        @sku = params[:product][:sku]
+        @response = get_product_data
+
+        if @response && @response.length > 0
+
+          params[:product][:price] = calculate_price(@response[0]['price'])
+          params[:product][:cost_price] = @response[0]['price']
+          product = add_product_from_price_row(@response[0]['description'], clear(@response[0]['numberFix']), @response[0]['brand'], "-","-",params)
+        end
+        product
+      end
     end
+
 
     def self.import(params)
       spreadsheet = open_spreadsheet(params[:file])
@@ -48,8 +66,6 @@ module Assist
       params[:product][:description] = name
       params[:product][:meta_description] = name
       params[:product][:meta_keywords] = name
-      params[:product][:price] = 0
-      params[:product][:cost_price] = 0
       params[:product][:sku] = sku
       params[:product][:brand] = brand
       params[:product][:oem_number] = oem
@@ -60,6 +76,7 @@ module Assist
       params[:product][:product_properties_attributes] << {:property_name => I18n.t('global.brand'),          :value=>brand,:position=>1}
       params[:product][:product_properties_attributes] << {:property_name => I18n.t('global.originalNumber'), :value=>oem,:position=>2}
       params[:product][:product_properties_attributes] << {:property_name => I18n.t('global.applicability'), :value=>applicability,:position=>3}
+
 
       @product = Spree::Core::Importer::Product.new(nil, product_params(params), {}).create
     end
@@ -78,7 +95,7 @@ module Assist
     end
 
     def self.calculate_price(price)
-      new_price = price + (price * (@partner.percents/100))
+      calculated_price = price + (price * (@partner.percents/100))
     end
 
     def self.update_product(response)
