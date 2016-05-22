@@ -10,9 +10,9 @@ module Paperclip
   end
 end
 
-# Paperclip.options[:content_type_mappings] = {
-#     :jpg => "image/jpeg",
-#     :jpeg => "image/jpeg",
-#     :png => "image/png",
-#     :gif => "image/gif",
-# }
+Paperclip.options[:content_type_mappings] = {
+    :jpg => "image/jpeg",
+    :jpeg => "image/jpeg",
+    :png => "image/png",
+    :gif => "image/gif",
+}
