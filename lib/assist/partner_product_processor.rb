@@ -2,6 +2,7 @@ module Assist
   class PartnerProductProcessor
 
     require 'json'
+    require 'uri'
 
     class << self
       include Spree::Core::Engine.routes.url_helpers
@@ -139,7 +140,7 @@ module Assist
 
     def self.search_articles_url
       pattern = "/search/articles?"
-      url = "#{@partner.url}#{pattern}userlogin=#{@partner.login}&userpsw=#{@partner.pass}&number=#{clear(@sku)}&brand=#{@brand}"
+      url = "#{@partner.url}#{pattern}userlogin=#{@partner.login}&userpsw=#{@partner.pass}&number=#{URI.encode(clear(@sku))}&brand=#{@brand}"
     end
 
     def self.clear(text)
