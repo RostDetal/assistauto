@@ -1,12 +1,12 @@
 - if current_page?(spree.root_url)
   .autoservice-wrapper
-    .container-fluid.autoservice-row
+    .container-fluid
       .container
         .row
           .col-sm-4.col-md-2
             .thumbnail.text-center.text-uppercase.no-outline.autoservice-thumbail
-              =link_to image_tag(asset_path('general/car-service.svg'), size: '65x65'), '#tab1', 'data-toggle'=> "tab"
-              a data-toggle="tab" href='#tab1' =I18n.t 'auto.service.name'
+              =link_to image_tag(asset_path('general/store.svg'), size: '65x65'), '#tab6', 'data-toggle'=> "tab"
+              a data-toggle="tab" href='#tab5'  =I18n.t ('auto.store.name')
           .col-sm-4.col-md-2
             .thumbnail.text-center.text-uppercase.no-outline.autoservice-thumbail
               =link_to image_tag(asset_path('general/check.svg'), size: '65x65'), '#tab2', 'data-toggle'=> "tab"
@@ -25,8 +25,9 @@
               a data-toggle="tab" href='#tab5'  =I18n.t ('auto.repair.name')
           .col-sm-4.col-md-2
             .thumbnail.text-center.text-uppercase.no-outline.autoservice-thumbail
-              =link_to image_tag(asset_path('general/store.svg'), size: '65x65'), '#tab6', 'data-toggle'=> "tab"
-              a data-toggle="tab" href='#tab5'  =I18n.t ('auto.store.name')
+              =link_to image_tag(asset_path('general/car-service.svg'), size: '65x65'), '#tab1', 'data-toggle'=> "tab"
+              a data-toggle="tab" href='#tab1' =I18n.t 'auto.service.name'
+
     .container.autoservice-row-clean
       .row
         .tab-content.col-sm-9 style="min-height:231px;"

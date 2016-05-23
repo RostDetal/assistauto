@@ -1,28 +1,16 @@
 nav.navbar.navbar-default.navbar-fixed-top.drop-shadow-bottom
   .container
-    .navbar-header
-      button.navbar-toggle.collapsed type="button" data-toggle="collapse" data-target="#header-collapsing-content" aria-expanded="false"
-        span.sr-only Toggle navigation
-        span.icon-bar
-        span.icon-bar
-        span.icon-bar
-      = link_to image_tag(Spree::Config[:logo]), spree.root_path, class: 'navbar-brand'
+    = link_to image_tag(Spree::Config[:logo]), spree.root_path, class: 'navbar-brand'
+    - if spree_current_user
+      .btn-group.pull-right
+        = link_to "", "", class: 'login-button navbar-brand dropdown-toggle', 'data-toggle' => "dropdown", 'aria-haspopup' => "true", 'aria-expanded' => "false"
+        ul.dropdown-menu.custom-menu
+          li = link_to Spree.t(:my_account), spree.account_path
+          li = link_to Spree.t(:logout), spree.logout_path
+    - else
+      = link_to "", spree.login_path, class: 'login-button navbar-brand pull-right'
 
-    - @taxons = @taxon && @taxon.parent ? @taxon.parent.children : Spree::Taxon.roots
-    .navbar-collapse.collapse id="header-collapsing-content"
-      form.navbar-form.navbar-right role="search" method="get" accept-charset="UTF-8" action="/products"
-        .form-group
-          - if spree_current_user
-            .btn-group
-              = link_to "", "", class: 'login-button dropdown-toggle', 'data-toggle'=>"dropdown", 'aria-haspopup'=>"true", 'aria-expanded'=>"false"
-              ul.dropdown-menu.custom-menu
-                li =link_to Spree.t(:my_account), spree.account_path
-                li =link_to Spree.t(:logout), spree.logout_path
-                /li.divider role="separator"
-          - else
-            = link_to "", spree.login_path, class: 'login-button hidden-xs'
-          .input-group
-            input.form-control type="search" name="keywords" id="keywords" placeholder="Я ищу..."
-            span.input-group-btn
-              button.btn.btn-success type="submit"
-                =image_tag(asset_path("user/search.png"))
+
+
+
+

@@ -1,0 +1,20 @@
+- if current_page?(spree.root_url)
+  .container-fluid.search-row
+    .container
+      .row
+
+
+
+        .col-md-5.pull-left
+          ul.nav.navbar-nav.navbar-left
+            li#link-to-cart
+              = link_to Spree.t(:cart), '/cart'
+            |<script>Spree.fetch_cart()</script>
+        .col-md-3.text-right
+        .col-md-4.pull-right.center-block
+            form role="search" method="get" accept-charset="UTF-8" action="/products" style="margin-top:3px;"
+              .input-group
+                input.form-control type="search" name="keywords" id="keywords" placeholder="Я ищу..."
+                  span.input-group-btn
+                    button.btn.btn-success type="submit"
+                      = image_tag(asset_path("user/search.png"))
