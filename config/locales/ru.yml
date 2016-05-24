@@ -825,7 +825,7 @@ ru:
     guest_user_account: Checkout as a Guest
     has_no_shipped_units: has no shipped units
     height: Height
-    home: Home
+    home: 'Главная'
     i18n:
       available_locales: Available Locales
       fields: Fields
@@ -839,13 +839,13 @@ ru:
       this_file_language: English (US)
       translations: Translations
     icon: Icon
-    image: Image
-    images: Images
+    image: 'Изображение'
+    images: 'Изображения'
     implement_eligible_for_return: "Must implement #eligible_for_return? for your EligibilityValidator."
     implement_requires_manual_intervention: "Must implement #requires_manual_intervention? for your EligibilityValidator."
     inactive: Inactive
     incl: incl.
-    included_in_price: Included in Price
+    included_in_price: 'Включено в стоимость'
     included_price_validation: cannot be selected unless you have set a Default Tax Zone
     incomplete: Incomplete
     info_product_has_multiple_skus: "This product has %{count} variants:"
@@ -1426,7 +1426,7 @@ ru:
     taxonomy: Taxonomy
     taxonomy_edit: Edit taxonomy
     taxonomy_tree_error: The requested change has not been accepted and the tree has been returned to its previous state, please try again.
-    taxonomy_tree_instruction: ! '* Right click a child in the tree to access the menu for adding, deleting or sorting a child.'
+    taxonomy_tree_instruction: ! '* Кликните правой кнопкой мыши на категории для вызова контекстного меню для добавления, редактирования, удаления и сортирования категории.'
     taxons: Taxons
     test: Test
     test_mailer:
