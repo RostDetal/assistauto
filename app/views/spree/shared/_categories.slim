@@ -1,0 +1,10 @@
+.container
+  .row
+    h3 Категории товаров
+    .wrapper
+      - @taxonomies.each do |category|
+        .col-md-3
+          =link_to seo_url(category.taxons.first)
+            h5 #{category.name}
+            =image_tag category.image(:big)
+

@@ -9,4 +9,9 @@
       <%= f.label :can_show_home, Spree.t(:can_show_home) %>
       <%= f.check_box :can_show_home %>
   <% end %>
+
+  <%= f.field_container :image, class: ['form-group'] do %>
+      <%= f.label :image, Spree.t(:image) %>
+      <%= f.file_field :image %>
+  <% end %>
 </div>

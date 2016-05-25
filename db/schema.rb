@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160521193728) do
+ActiveRecord::Schema.define(version: 20160525074909) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -956,11 +956,15 @@ ActiveRecord::Schema.define(version: 20160521193728) do
   add_index "spree_tax_rates", ["zone_id"], name: "index_spree_tax_rates_on_zone_id"
 
   create_table "spree_taxonomies", force: :cascade do |t|
-    t.string   "name",                          null: false
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
-    t.integer  "position",      default: 0
-    t.boolean  "can_show_home", default: false
+    t.string   "name",                               null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+    t.integer  "position",           default: 0
+    t.boolean  "can_show_home",      default: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.string   "image_file_size"
+    t.string   "image_updated_at"
   end
 
   add_index "spree_taxonomies", ["position"], name: "index_spree_taxonomies_on_position"
