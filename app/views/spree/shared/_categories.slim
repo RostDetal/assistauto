@@ -2,8 +2,11 @@
   .row
     h3 Категории товаров
     .wrapper
+      - rows = (@taxonomies.length * 0.25).ceil
+
       - @taxonomies.each do |category|
         .col-md-3
+          =rows
           =link_to seo_url(category.taxons.first)
             h5 #{category.name}
             =image_tag category.image(:big)
