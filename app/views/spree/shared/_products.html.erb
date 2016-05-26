@@ -34,7 +34,11 @@
             </div>
             <div class="panel-footer text-center">
               <span itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                <span class="price selling lead" itemprop="price"><%= display_price(product) %></span>
+                <%if product.price > 0%>
+                  <span class="price selling lead" itemprop="price"><%= display_price(product) %></span>
+                <%else%>
+                  <span class="price selling lead" itemprop="price">...</span>
+                <%end%>
               </span>
             </div>
           <% end %>
