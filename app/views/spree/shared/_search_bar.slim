@@ -2,18 +2,18 @@
   .container-fluid.search-row
     .container
       .row
-
-
-
-        .col-md-5.pull-left
+        .col-md-5.pull-left.hidden-xs
           ul.nav.navbar-nav.navbar-left
             li#link-to-cart
               = link_to Spree.t(:cart), '/cart'
             |<script>Spree.fetch_cart()</script>
-        .col-md-3.text-right
-        .col-md-4.pull-right.center-block
-            form role="search" method="get" accept-charset="UTF-8" action="/products" style="margin-top:3px;"
+        .col-md-2.text-right
+        .col-sm-5.col-md-5.col-xs-12.pull-right.center-block style="height: 39px !important;"
+            form.form-customize role="search" method="get" accept-charset="UTF-8" action="/products"
               .input-group
+                span.input-group-btn.hidden-sm.hidden-md.hidden-lg
+                  a.btn.btn-primary type="submit" href="/cart"
+                    = image_tag(asset_path("user/shopping-cart.svg"), size: '17x17')
                 input.form-control type="search" name="keywords" id="keywords" placeholder="Я ищу..."
                   span.input-group-btn
                     button.btn.btn-success type="submit"

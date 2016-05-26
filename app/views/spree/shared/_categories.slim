@@ -1,7 +1,8 @@
 - if current_page?(spree.root_url)
   .container
     .row
-      h3 Категории товаров
+      .col-md-12
+        h4.category-title Категории товаров
       .wrapper
         - rows = (@taxonomies.length * 0.25).ceil
         - @taxonomies.each do |category|
