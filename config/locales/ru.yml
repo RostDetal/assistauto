@@ -594,13 +594,13 @@ ru:
     available_on: Available On
     average_order_value: Average Order Value
     avs_response: AVS Response
-    back: Back
+    back: 'Назад'
     back_end: Backend
     backordered: Backordered
     back_to_resource_list: 'Back To %{resource} List'
     back_to_payment: Back To Payment
     back_to_rma_reason_list: Back To RMA Reason List
-    back_to_store: Go Back To Store
+    back_to_store: 'Перейти в магазин'
     back_to_users_list: Back To Users List
     backorderable: Backorderable
     backorderable_default: Backorderable default

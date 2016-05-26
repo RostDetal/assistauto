@@ -17,7 +17,8 @@ module Assist
         @sku = params[:product][:sku]
         @response = get_product_data
 
-        if @response && @response.length > 0
+        puts @response[0]
+        if @response && @response.length > 0 && @response.any?
 
           params[:product][:price] = calculate_price(@response[0]['price'])
           params[:product][:cost_price] = @response[0]['price']
@@ -54,7 +55,8 @@ module Assist
         @sku = @product.sku
         @response = get_product_data
 
-        if @response && @response.length > 0
+        puts @response.length
+        if (@response && @response.length > 0 && @response.any?)
           update_product(@response)
         end
       end
@@ -126,16 +128,29 @@ module Assist
 
       @json = JSON.parse(response.body)
       # из ответа ищем конкретно по артикулу и марке
-      @filter_all = @json.select{|hash| hash['numberFix'] == clear(@sku) && hash['brand'].downcase == @brand.downcase}
+      filter_all = @json.select{|hash| hash['numberFix'] == clear(@sku) && hash['brand'].downcase.delete(' ') == @brand.downcase.delete(' ')}
 
       # Дальше нам нужен склад южного бутово, пытаемся фильтровать и отсеять именно этот склад
-      @filter_partner_stock = @filter_all.select{|hash| hash['distributorId'] == @partner.stock}
+      filter_partner_stock = filter_all.select{|hash| hash['distributorId'] == @partner.stock}
 
       # на всякий случай сразу смотрим как и сос складом бутово, центральный склад
-      @filter_main_stock = @filter_all.select{|hash| hash['distributorId'] == @partner.main_stock}
+      filter_main_stock = filter_all.select{|hash| hash['distributorId'] == @partner.main_stock}
 
       # делаем окончательную выборку и того что отфильтровали
-      @filtered_stock = @filter_partner_stock.length>0 ? @filter_partner_stock : @filter_main_stock.length > 0 ? @filter_main_stock : @filter_all
+      filtered_stock = filter_partner_stock.length>0 ? filter_partner_stock : filter_main_stock.length > 0 ? filter_main_stock : find_with_minimum_delivery_time(filter_all)
+      filtered_stock
+    end
+
+    def self.find_with_minimum_delivery_time(jsonData)
+      returnData = jsonData[0]
+      jsonData.each do |j|
+        if returnData['deliveryPeriod'] < j['deliveryPeriod']
+          returnData = j
+        end
+      end
+      retArray = []
+      retArray << returnData
+      retArray
     end
 
     def self.search_articles_url
