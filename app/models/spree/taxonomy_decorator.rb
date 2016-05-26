@@ -2,7 +2,7 @@ Spree::Taxonomy.class_eval do
 
 
   has_attached_file :image,
-                    styles: { mini: '32x32>', normal: '128x128>', big:'256x256>' },
+                    styles: { mini: '32x32>', normal: '128x128>', big:'200x200>' },
                     default_style: :mini,
                     url: '/system/taxonomies/:id/:style/:basename.:extension',
                     path: ':rails_root/public/system/taxonomies/:id/:style/:basename.:extension',

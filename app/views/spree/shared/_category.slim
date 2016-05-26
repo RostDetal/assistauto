@@ -1,0 +1,6 @@
+.col-md-3
+  .category-wrapper
+    =link_to seo_url(category.taxons.first)
+      =image_tag category.image(:big)
+      h5 #{category.name}
+
