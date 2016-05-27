@@ -22,6 +22,8 @@ module Assist
 
           params[:product][:price] = calculate_price(@response[0]['price'])
           params[:product][:cost_price] = @response[0]['price']
+          params[:product][:partner_count] = @response[0]['availability']
+          params[:product][:delivery_time] = @response[0]['deliveryPeriod']
           product = add_product_from_price_row(@response[0]['description'], clear(@response[0]['numberFix']), @response[0]['brand'], "-","-",params)
         end
         product
@@ -102,6 +104,8 @@ module Assist
     end
 
     def self.update_product(response)
+      puts response
+
       params = {}
 
       params[:available_on] ||= Time.now
@@ -113,6 +117,8 @@ module Assist
       params[:cost_price] = response[0]['price']
       params[:sku] = response[0]['numberFix']
       params[:weight] = response[0]['weight']
+      params[:partner_count] = response[0]['availability']
+      params[:delivery_time] = response[0]['deliveryPeriod']
 
       @product.update_attributes(params)
     end

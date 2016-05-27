@@ -38,6 +38,8 @@ ru:
   global:
     work_time: 'Режим работы'
     sku: 'Артикул'
+    delivery: 'Поставка в магазин'
+    stock: 'Наличие на складе'
     brand: 'Брэнд'
     weight: 'Вес'
     check_price: 'Узнать цену'
@@ -50,7 +52,7 @@ ru:
       zero: 'Подлежит возврату'
 
     delivery_days:
-      zero: 'На складе'
+      zero: 'Сегодня'
       one: '1 день'
       few: ' %{count} дня'
       many: '%{count} дней'

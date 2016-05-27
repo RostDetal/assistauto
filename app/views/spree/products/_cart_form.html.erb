@@ -27,33 +27,57 @@
     <% end %>
 
     <% if @product.price_in(current_currency) and !@product.price.nil? %>
-      <div data-hook="product_price" class="col-md-5">
-        <div id="product-price">
-          <h6 class="product-section-title"><%= I18n.t 'global.sku' %></h6>
-             <span class="lead" itemprop="price">
-              <%= @product.sku %>
-            </span>
-          <h6 class="product-section-title"><%= Spree.t(:price) %></h6>
-          <div>
-            <span class="lead price selling" itemprop="price">
-              <%if @product.price > 0%>
-                <%= display_price(@product) %>
-              <%else%>
-                <%= I18n.t('global.price.zero')%>
-              <%end%>
-            </span>
-            <span itemprop="priceCurrency" content="<%= @product.currency %>"></span>
-          </div>
+      <div data-hook="product_price" class="col-md-12">
 
-          <% if @product.master.can_supply? %>
-            <link itemprop="availability" href="https://schema.org/InStock" />
-          <% elsif @product.variants.empty? %>
-            <br />
-            <span class="out-of-stock"><%= Spree.t(:out_of_stock) %></span>
-          <% end %>
+        <div class="row">
+          <div class="col-md-8">
+            <div id="product-price" class="col-sm-2 pull-left">
+              <h6 class="product-section-title"><%= I18n.t 'global.sku' %></h6>
+                 <span class="lead" itemprop="price">
+                  <%= @product.sku %>
+                </span>
+              <h6 class="product-section-title"><%= Spree.t(:price) %></h6>
+              <div>
+                <span class="lead price selling" itemprop="price">
+                  <%if @product.price > 0%>
+                    <%= display_price(@product) %>
+                  <%else%>
+                    <%= I18n.t('global.price.zero')%>
+                  <%end%>
+                </span>
+                <span itemprop="priceCurrency" content="<%= @product.currency %>"></span>
+              </div>
+
+              <% if @product.master.can_supply? %>
+                <link itemprop="availability" href="https://schema.org/InStock" />
+              <% elsif @product.variants.empty? %>
+                <br />
+                <span class="out-of-stock"><%= Spree.t(:out_of_stock) %></span>
+              <% end %>
+            </div>
+
+            <div id="product-partner" class="col-sm-6 pull-right">
+              <h6 class="product-section-title"><%= I18n.t 'global.delivery' %></h6>
+                 <span class="lead" itemprop="price">
+                   <%days = @product.delivery_time/24%>
+                   <%= I18n.t("global.delivery_days", :count => days)%>
+                </span>
+              <h6 class="product-section-title"><%= I18n.t 'global.stock' %></h6>
+              <div>
+                <span class="lead price selling" itemprop="price">
+                  <%if @product.partner_count > 0%>
+                    <%= @product.partner_count %>
+                  <%else%>
+                    <%= I18n.t('global.price.zero')%>
+                  <%end%>
+                </span>
+                <span itemprop="priceCurrency" content="<%= @product.currency %>"></span>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="add-to-cart">
+        <div class="add-to-cart col-md-6">
           <br/>
           <div class="input-group">
             <%if can_buy(@product)%>
