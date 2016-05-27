@@ -19,6 +19,30 @@ Spree::Product.class_eval do
     ]
   end
 
+  def delivery
+    delivery = ""
+
+    days = (self.delivery_time/24).ceil
+
+    if days == 0
+      delivery = "В течение нескольких часов"
+    end
+
+    if days == 1
+      delivery = "В течение 24 часов"
+    end
+
+    if days == 2
+      delivery = "В течение 2х дней"
+    end
+
+    if days>2
+      delivery = "В течение #{days} дней"
+    end
+
+    delivery
+  end
+
 
   private
 

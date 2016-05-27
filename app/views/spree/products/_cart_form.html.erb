@@ -27,10 +27,9 @@
     <% end %>
 
     <% if @product.price_in(current_currency) and !@product.price.nil? %>
-      <div data-hook="product_price">
-        <div class="row">
-          <div class="col-md-10 col-sm-10">
-            <div id="product-price" class="col-sm-5 col-md-5">
+        <div data-hook="product_price" class="row">
+          <div class="col-md-12">
+            <div class="col-md-4 col-xs-6">
               <h6 class="product-section-title"><%= I18n.t 'global.sku' %></h6>
                  <span class="lead" itemprop="price">
                   <%= @product.sku %>
@@ -46,41 +45,34 @@
                 </span>
                 <span itemprop="priceCurrency" content="<%= @product.currency %>"></span>
               </div>
-
-              <% if @product.master.can_supply? %>
-                <link itemprop="availability" href="https://schema.org/InStock" />
-              <% elsif @product.variants.empty? %>
-                <br />
-                <span class="out-of-stock"><%= Spree.t(:out_of_stock) %></span>
-              <% end %>
             </div>
-
-            <%if @product.partner_count>0%>
-            <div id="product-partner" class="col-sm-5 col-md-5">
-              <h6 class="product-section-title"><%= I18n.t 'global.delivery' %></h6>
-                 <span class="lead" itemprop="price">
-                   <%days = @product.delivery_time/24%>
-                   <%= I18n.t("global.delivery_days", :count => days)%>
-                </span>
-              <h6 class="product-section-title"><%= I18n.t 'global.stock' %></h6>
-              <div>
-                <span class="lead price selling" itemprop="price">
-                  <%if @product.partner_count > 0%>
-                    <%= @product.partner_count %>
-                  <%else%>
-                    <%= I18n.t('global.price.zero')%>
-                  <%end%>
-                </span>
-                <span itemprop="priceCurrency" content="<%= @product.currency %>"></span>
-              </div>
+            <div class="col-md-4 col-xs-6">
+              <%if @product.partner_count > 0%>
+                  <h6 class="product-section-title"><%= I18n.t 'global.delivery' %></h6>
+                  <span class="lead" itemprop="price">
+                    <%= @product.delivery%>
+                  </span>
+                  <h6 class="product-section-title"><%= I18n.t 'global.stock' %></h6>
+                  <span class="lead price selling" itemprop="price">
+                    <%if @product.partner_count > 0%>
+                      <%= @product.partner_count %>
+                    <%else%>
+                      <%= I18n.t('global.price.zero')%>
+                    <%end%>
+                  </span>
+                  <span itemprop="priceCurrency" content="<%= @product.currency %>"></span>
+              <%end%>
             </div>
-            <%end%>
+            <div class="col-md-4 col-xs-12">
+              <div class="alert alert-info" role="alert">Цена товар не являтся окончательной. Обновление наличия и цены на товар происходит каждый день.</div>
+            </div>
 
           </div>
+
         </div>
 
         <div class="add-to-cart col-md-6">
-          <br/>
+          </br>
           <div class="input-group">
             <%if can_buy(@product)%>
                 <%= number_field_tag :quantity, 1,  :class => 'title form-control', :min => 1 %>

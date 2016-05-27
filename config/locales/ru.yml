@@ -53,9 +53,10 @@ ru:
 
     delivery_days:
       zero: 'Сегодня'
-      one: '1 день'
-      few: ' %{count} дня'
-      many: '%{count} дней'
+      one: 'через %{count} день'
+      two: 'через %{count} дня'
+      few: 'через %{count} дня'
+      many: 'через %{count} дней'
       other: 'Под заказ'
 
     price:
