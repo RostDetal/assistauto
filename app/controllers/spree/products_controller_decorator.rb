@@ -10,6 +10,24 @@ Spree::ProductsController.class_eval do
     redirect_if_legacy_path
   end
 
+  def analogs
+    product = Spree::Product.find_by_id(params["p_id"])
+    analogs = Assist::PartnerProductProcessor.get_product_analog(product)
+    hashMap = []
+    analogs.each do |analog|
+      puts analog
+      hashMap <<{:distributor =>analog["distributorId"],
+                                :brand =>analog["brand"],
+                                :numer => analog["number"],
+                                :numberFix => analog["numberFix"],
+                                :price => analog["price"],
+                                :description => analog["description"],
+                                :deliveryPeriod => analog["deliveryPeriod"],
+                                :availability => analog["availability"]}
+    end
+    render :json => hashMap.to_json
+  end
+
   private
 
   def try_update_product

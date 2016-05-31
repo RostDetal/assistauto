@@ -48,6 +48,14 @@ module Assist
 
     end
 
+    def self.get_product_analog(product)
+      @product = product
+      @partner = Spree::Partner.find_by_id(product.partner_id)
+      @brand = @product.brand
+      @sku = @product.sku
+      response = HTTParty.get(search_articles_url)
+    end
+
     # Get data from partner and update product fields
     def self.get_product_update(product)
       if (product.price === 0 || Time.now >= product.updated_at + 1.day) && !product.partner_id.nil?

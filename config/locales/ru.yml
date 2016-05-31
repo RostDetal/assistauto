@@ -910,7 +910,7 @@ ru:
     login_failed: Login authentication failed.
     login_name: 'Войти'
     logout: 'Выход'
-    look_for_similar_items: Look for similar items
+    look_for_similar_items: "Похожие товары в категориях"
     make_refund: Make refund
     make_sure_the_above_reimbursement_amount_is_correct: Make sure the above reimbursement amount is correct
     manage_promotion_categories: Manage Promotion Categories

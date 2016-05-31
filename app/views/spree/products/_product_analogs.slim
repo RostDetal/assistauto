@@ -1,0 +1,15 @@
+.row
+  .col-md-12
+    .h3.product-section-title
+      | Список замен
+    table.table#analogs-table
+      thead
+        tr
+          td Марка
+          td Артикул
+          td Количество
+          td Время доставки
+          td Цена
+      tbody
+
+script Spree.check_partner_price(#{@product.id})

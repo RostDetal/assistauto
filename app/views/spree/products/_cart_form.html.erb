@@ -31,14 +31,14 @@
           <div class="col-md-12">
             <div class="col-md-4 col-xs-6">
               <h6 class="product-section-title"><%= I18n.t 'global.sku' %></h6>
-                 <span class="lead" itemprop="price">
+                 <span class="lead size-16" itemprop="price">
                   <%= @product.sku %>
                 </span>
               <h6 class="product-section-title"><%= Spree.t(:price) %></h6>
               <div>
-                <span class="lead price selling" itemprop="price">
+                <span class="lead size-16 price selling" itemprop="price">
                   <%if @product.price > 0%>
-                    <%= display_price(@product) %>
+                   <b> <%= display_price(@product) %> </b>
                   <%else%>
                     <%= I18n.t('global.price.zero')%>
                   <%end%>
@@ -49,11 +49,11 @@
             <div class="col-md-4 col-xs-6">
               <%if @product.partner_count > 0%>
                   <h6 class="product-section-title"><%= I18n.t 'global.delivery' %></h6>
-                  <span class="lead" itemprop="price">
+                  <span class="lead size-16" itemprop="price">
                     <%= @product.delivery%>
                   </span>
                   <h6 class="product-section-title"><%= I18n.t 'global.stock' %></h6>
-                  <span class="lead price selling" itemprop="price">
+                  <span class="lead size-16 price selling" itemprop="price">
                     <%if @product.partner_count > 0%>
                       <%= @product.partner_count %>
                     <%else%>
@@ -103,3 +103,4 @@
     <% end %>
   </div>
 <% end %>
+

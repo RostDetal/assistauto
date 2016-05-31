@@ -65,6 +65,9 @@ Rails.application.routes.draw do
 end
 
 Spree::Core::Engine.routes.draw do
+
+  get '/analogs', to: "products#analogs"
+
   namespace :admin do
     resource :autoservice_settings
     resources :partners
