@@ -19,4 +19,5 @@ end
 
 Spree.user_class = "Spree::User"
 Spree::PermittedAttributes.product_attributes << [:brand, :partner_id, :oem_number, :applicability, :delivery_time, :partner_count]
+Spree::Config.admin_products_per_page = 100
 
