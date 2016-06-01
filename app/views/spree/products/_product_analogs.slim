@@ -6,14 +6,15 @@
       .bounce1
       .bounce2
       .bounce3
-    table.table#analogs-table style="display:none;"
-      thead
-        tr
-          td Марка
-          td Артикул
-          td.hidden-xs Количество
-          td.hidden-xs Поставка в магазин
-          td Цена
-      tbody
+    form id="order" method="post" accept-charset="UTF-8" action="/orders/populate"
+      table.table#analogs-table style="display:none;"
+        thead
+          tr
+            td Марка
+            td Артикул
+            td.hidden-xs Количество
+            td.hidden-xs Поставка в магазин
+            td Цена
+        tbody
 
 script Spree.check_partner_price(#{@product.id})

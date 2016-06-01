@@ -46,16 +46,19 @@ Spree.check_partner_price = (pid) ->
       data.sort (a, b) ->
         sortBy('deliveryPeriod', a, b) or
         sortBy('price', a, b)
+
       for analog in data
         rowsCount = table.rows.length
         row = table.insertRow(rowsCount);
 
         row.setAttribute('class',"success") if analog["deliveryPeriod"]==0
+        row.setAttribute('id', rowsCount)
         cell1 = row.insertCell(0);
         cell2 = row.insertCell(1);
         cell3 = row.insertCell(2);
         cell4 = row.insertCell(3);
         cell5 = row.insertCell(4);
+        cell6 = row.insertCell(5);
         cell1.innerHTML = analog["brand"];
         cell2.innerHTML = analog["numberFix"];
         cell3.innerHTML = analog["availability"];
@@ -63,4 +66,6 @@ Spree.check_partner_price = (pid) ->
         cell4.innerHTML = delivery(analog["deliveryPeriod"]);
         cell4.setAttribute('class','hidden-xs')
         cell5.innerHTML = analog["price"]+" ₽";
+        cell5.setAttribute("id", "price")
+        cell6.innerHTML = '<button type="submit"></button>'
       data = null
