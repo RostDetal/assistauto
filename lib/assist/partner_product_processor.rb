@@ -108,7 +108,7 @@ module Assist
     end
 
     def self.calculate_price(price)
-      calculated_price = price + (price * (@partner.percents/100))
+      calculated_price = (price + (price * (@partner.percents/100))).ceil
     end
 
     def self.update_product(response)
@@ -122,7 +122,7 @@ module Assist
       params[:meta_description] = response[0]['description']
       params[:meta_keywords] = response[0]['description']
       params[:price] = calculate_price(response[0]['price'])
-      params[:cost_price] = response[0]['price']
+      params[:cost_price] = response[0]['price'].ceil
       params[:sku] = response[0]['numberFix']
       params[:weight] = response[0]['weight']
       params[:partner_count] = response[0]['availability']

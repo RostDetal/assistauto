@@ -12,6 +12,7 @@ Spree::ProductsController.class_eval do
 
   def analogs
     product = Spree::Product.find_by_id(params["p_id"])
+    partner = Spree::Partner.find_by_id(product.partner_id)
     analogs = Assist::PartnerProductProcessor.get_product_analog(product)
     hashMap = []
 
@@ -39,11 +40,12 @@ Spree::ProductsController.class_eval do
 
     filteredByNumber.each do |item|
       analog = item[1]
+      price =
       hashMap <<{:distributor =>analog["distributorId"],
                                 :brand =>analog["brand"],
                                 :numer => analog["number"],
                                 :numberFix => analog["numberFix"],
-                                :price => analog["price"],
+                                :price => (analog["price"] + ((analog["price"] * partner.percents)/100)).ceil,
                                 :description => analog["description"],
                                 :deliveryPeriod => analog["deliveryPeriod"],
                                 :availability => analog["availability"]}
