@@ -38,12 +38,18 @@ Spree.check_partner_price = (pid) ->
       console.log(textStatus)
     success: (data, textStatus, jqXHR) ->
       table = document.getElementById("analogs-table")
+      spinner = document.getElementById("analogs-spinner")
+      spinner.remove()
+
+      console.log(data)
+      table.removeAttribute('style')
       data.sort (a, b) ->
         sortBy('deliveryPeriod', a, b) or
         sortBy('price', a, b)
       for analog in data
         rowsCount = table.rows.length
         row = table.insertRow(rowsCount);
+
         row.setAttribute('class',"success") if analog["deliveryPeriod"]==0
         cell1 = row.insertCell(0);
         cell2 = row.insertCell(1);
@@ -54,5 +60,5 @@ Spree.check_partner_price = (pid) ->
         cell2.innerHTML = analog["numberFix"];
         cell3.innerHTML = analog["availability"];
         cell4.innerHTML = delivery(analog["deliveryPeriod"]);
-        cell5.innerHTML = analog["price"];
+        cell5.innerHTML = analog["price"]+" ₽";
       data = null

@@ -14,8 +14,31 @@ Spree::ProductsController.class_eval do
     product = Spree::Product.find_by_id(params["p_id"])
     analogs = Assist::PartnerProductProcessor.get_product_analog(product)
     hashMap = []
+
+    filteredByBrand={}
     analogs.each do |analog|
-      puts analog
+      if filteredByBrand[analog["brand"]].nil?
+        filteredByBrand[analog["brand"]] = []
+        filteredByBrand[analog["brand"]] << analog
+      else
+        filteredByBrand[analog["brand"]] << analog
+      end
+    end
+
+
+    filteredByNumber = {}
+    filteredByBrand.each do |analog|
+      firstElement = analog[1][0]
+      analog[1].each do |item|
+        if item['numberFix'] == firstElement['numberFix'] && item['deliveryPeriod'] < firstElement['deliveryPeriod'] && item['availability'] > 0
+          firstElement = item
+        end
+      end
+      filteredByNumber[analog[0]] = firstElement
+    end
+
+    filteredByNumber.each do |item|
+      analog = item[1]
       hashMap <<{:distributor =>analog["distributorId"],
                                 :brand =>analog["brand"],
                                 :numer => analog["number"],
