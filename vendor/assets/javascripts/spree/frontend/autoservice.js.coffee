@@ -59,6 +59,8 @@ Spree.check_partner_price = (pid) ->
         cell1.innerHTML = analog["brand"];
         cell2.innerHTML = analog["numberFix"];
         cell3.innerHTML = analog["availability"];
+        cell3.setAttribute('class','hidden-xs')
         cell4.innerHTML = delivery(analog["deliveryPeriod"]);
+        cell4.setAttribute('class','hidden-xs')
         cell5.innerHTML = analog["price"]+" ₽";
       data = null
