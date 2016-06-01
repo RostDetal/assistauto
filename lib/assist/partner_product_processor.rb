@@ -108,7 +108,7 @@ module Assist
     end
 
     def self.calculate_price(price)
-      calculated_price = (price + (price * (@partner.percents/100))).ceil
+      calculated_price = @partner.nil? ? price : (price + (price * (@partner.percents/100))).ceil
     end
 
     def self.update_product(response)

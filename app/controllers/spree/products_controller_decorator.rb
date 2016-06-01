@@ -40,12 +40,12 @@ Spree::ProductsController.class_eval do
 
     filteredByNumber.each do |item|
       analog = item[1]
-      price =
+      price = partner.nil? ? analog["price"] : (analog["price"] + ((analog["price"] * partner.percents)/100)).ceil
       hashMap <<{:distributor =>analog["distributorId"],
                                 :brand =>analog["brand"],
                                 :numer => analog["number"],
                                 :numberFix => analog["numberFix"],
-                                :price => (analog["price"] + ((analog["price"] * partner.percents)/100)).ceil,
+                                :price => price,
                                 :description => analog["description"],
                                 :deliveryPeriod => analog["deliveryPeriod"],
                                 :availability => analog["availability"]}
