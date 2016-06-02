@@ -41,8 +41,17 @@ Spree.check_partner_price = (pid) ->
       spinner = document.getElementById("analogs-spinner")
       spinner.remove()
 
-      console.log(data)
       table.removeAttribute('style')
+
+
+
+      table.innerHTML += "<input type='hidden' value='#{analog["brand"]}' name='brand'></input>"
+      table.innerHTML += "<input type='hidden' value='#{analog["description"]}' name='name'></input>"
+      table.innerHTML += "<input type='hidden' value='#{analog["price"]}' name='price'></input>"
+      table.innerHTML += "<input type='hidden' value='#{analog["numberFix"]}' name='sku'></input>"
+      table.innerHTML += "<input type='hidden' value='#{analog["deliveryPeriod"]}' name='delivery'></input>"
+      table.innerHTML += "<input type='hidden' value='#{analog["availability"]}' name='availability'></input>"
+
       data.sort (a, b) ->
         sortBy('deliveryPeriod', a, b) or
         sortBy('price', a, b)
@@ -51,8 +60,9 @@ Spree.check_partner_price = (pid) ->
         rowsCount = table.rows.length
         row = table.insertRow(rowsCount);
 
+
         row.setAttribute('class',"success") if analog["deliveryPeriod"]==0
-        row.setAttribute('id', rowsCount)
+        row.setAttribute('id', "row_"+rowsCount)
         cell1 = row.insertCell(0);
         cell2 = row.insertCell(1);
         cell3 = row.insertCell(2);
@@ -66,6 +76,15 @@ Spree.check_partner_price = (pid) ->
         cell4.innerHTML = delivery(analog["deliveryPeriod"]);
         cell4.setAttribute('class','hidden-xs')
         cell5.innerHTML = analog["price"]+" ₽";
-        cell5.setAttribute("id", "price")
-        cell6.innerHTML = '<button type="submit"></button>'
+        cell6.innerHTML = "<button id='#{rowsCount}' type='button' name='product[#{rowsCount}]'></button>"
+        cell6.onclick = cartClick
+
+
       data = null
+
+
+cartClick = (event) ->
+  target = event.originalTarget
+  brandInput = document.getElementById("brand")
+  if target.type == "button"
+    console.log(brandInput)

@@ -6,7 +6,7 @@
       .bounce1
       .bounce2
       .bounce3
-    form id="order" method="post" accept-charset="UTF-8" action="/orders/populate"
+    = form_tag populate_orders_path do |f|
       table.table#analogs-table style="display:none;"
         thead
           tr
