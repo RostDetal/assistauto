@@ -45,12 +45,12 @@ Spree.check_partner_price = (pid) ->
 
 
 
-      table.innerHTML += "<input type='hidden' value='#{analog["brand"]}' name='brand'></input>"
-      table.innerHTML += "<input type='hidden' value='#{analog["description"]}' name='name'></input>"
-      table.innerHTML += "<input type='hidden' value='#{analog["price"]}' name='price'></input>"
-      table.innerHTML += "<input type='hidden' value='#{analog["numberFix"]}' name='sku'></input>"
-      table.innerHTML += "<input type='hidden' value='#{analog["deliveryPeriod"]}' name='delivery'></input>"
-      table.innerHTML += "<input type='hidden' value='#{analog["availability"]}' name='availability'></input>"
+#      table.innerHTML += "<input type='hidden' value='#{analog["brand"]}' name='brand'></input>"
+#      table.innerHTML += "<input type='hidden' value='#{analog["description"]}' name='name'></input>"
+#      table.innerHTML += "<input type='hidden' value='#{analog["price"]}' name='price'></input>"
+#      table.innerHTML += "<input type='hidden' value='#{analog["numberFix"]}' name='sku'></input>"
+#      table.innerHTML += "<input type='hidden' value='#{analog["deliveryPeriod"]}' name='delivery'></input>"
+#      table.innerHTML += "<input type='hidden' value='#{analog["availability"]}' name='availability'></input>"
 
       data.sort (a, b) ->
         sortBy('deliveryPeriod', a, b) or
