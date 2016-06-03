@@ -6,6 +6,7 @@ nav.navbar.navbar-default.navbar-fixed-top.drop-shadow-bottom
         = link_to "", "", class: 'login-button navbar-brand dropdown-toggle', 'data-toggle' => "dropdown", 'aria-haspopup' => "true", 'aria-expanded' => "false"
         ul.dropdown-menu.custom-menu
           li = link_to Spree.t(:my_account), spree.account_path
+          li = link_to Spree.t(:cart), spree.cart_path
           li = link_to Spree.t(:logout), spree.logout_path
     - else
       = link_to "", spree.login_path, class: 'login-button navbar-brand pull-right'
