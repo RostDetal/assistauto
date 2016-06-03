@@ -59,3 +59,5 @@ gem 'translit'
 gem 'iconv'
 gem 'roo-xls'
 
+gem 'spree_static_content', github: 'spree-contrib/spree_static_content', branch: '3-1-stable'
+
