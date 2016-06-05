@@ -15,10 +15,10 @@
 
     <%= render partial: 'spree/shared/search_bar'%>
 
-
-
     <!--<%= render partial: 'spree/shared/auto_service'%>-->
-    <!--<%= render partial: 'spree/shared/advertisement'%>-->
+
+
+
     <!--<%= render partial: 'spree/shared/auto_store'%>-->
     <!--<%= render partial: 'spree/shared/navigation_menu' %>-->
     <!--<div class="container">
@@ -32,7 +32,7 @@
 
         <%= render partial: 'spree/shared/categories'%>
 
-        <!--<%= render partial: 'spree/shared/sidebar' if content_for? :sidebar %>-->
+        <%= render partial: 'spree/shared/sidebar' if content_for? :sidebar %>
 
         <div id="content" class="<%= !content_for?(:sidebar) ? "col-sm-12" : "col-sm-8 col-md-9" %>" data-hook>
           <%= flash_messages %>
@@ -43,6 +43,9 @@
       </div>
     </div>
 
+    <%= render partial: 'spree/shared/maps'%>
+
+    <!--<%= render partial: 'spree/shared/advertisement'%>-->
     <%= render partial: 'spree/shared/footer'%>
   </body>
 </html>

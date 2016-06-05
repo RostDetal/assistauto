@@ -5,16 +5,24 @@
         .row
           .col-sm-4.col-md-2
             .thumbnail.text-center.text-uppercase.no-outline.autoservice-thumbail
-              =link_to image_tag(asset_path('general/store.svg'), size: '65x65'), '#tab6', 'data-toggle'=> "tab"
-              a data-toggle="tab" href='#tab5'  =I18n.t ('auto.store.name')
+              =link_to image_tag(asset_path('general/store.svg'), size: '65x65'), '#tab1', 'data-toggle'=> "tab"
+              a data-toggle="tab" href='#tab1' =I18n.t ('auto.store.name')
           .col-sm-4.col-md-2
             .thumbnail.text-center.text-uppercase.no-outline.autoservice-thumbail
-              =link_to image_tag(asset_path('general/check.svg'), size: '65x65'), '#tab2', 'data-toggle'=> "tab"
-              a data-toggle="tab" href='#tab2' =I18n.t ('auto.check.name')
+              = link_to image_tag(asset_path('general/car-service.svg'), size: '65x65'), '#tab2', 'data-toggle' => "tab"
+              a data-toggle="tab" href='#tab2' = I18n.t 'auto.delivery.name'
           .col-sm-4.col-md-2
             .thumbnail.text-center.text-uppercase.no-outline.autoservice-thumbail
-              =link_to image_tag(asset_path('general/oil.svg'), size: '65x65'), '#tab3', 'data-toggle'=> "tab"
-              a data-toggle="tab" href='#tab3'  =I18n.t ('auto.oil.name')
+              =link_to image_tag(asset_path('general/payment.svg'), size: '65x65'), '#tab2', 'data-toggle'=> "tab"
+              a data-toggle="tab" href='#tab2' =I18n.t ('auto.payment.name')
+
+
+          .col-sm-4.col-md-2
+            .thumbnail.text-center.text-uppercase.no-outline.autoservice-thumbail
+              =link_to image_tag(asset_path('general/check.svg'), size: '65x65'), '#tab3', 'data-toggle'=> "tab"
+              a data-toggle="tab" href='#tab3'  =I18n.t ('auto.check.name')
+
+
           .col-sm-4.col-md-2
             .thumbnail.text-center.text-uppercase.no-outline.autoservice-thumbail
               =link_to image_tag(asset_path('general/wheel.svg'), size: '65x65'), '#tab4', 'data-toggle'=> "tab"
@@ -23,15 +31,24 @@
             .thumbnail.text-center.text-uppercase.no-outline.autoservice-thumbail
               =link_to image_tag(asset_path('general/tool.svg'), size: '65x65'), '#tab5', 'data-toggle'=> "tab"
               a data-toggle="tab" href='#tab5'  =I18n.t ('auto.repair.name')
-          .col-sm-4.col-md-2
-            .thumbnail.text-center.text-uppercase.no-outline.autoservice-thumbail
-              =link_to image_tag(asset_path('general/car-service.svg'), size: '65x65'), '#tab1', 'data-toggle'=> "tab"
-              a data-toggle="tab" href='#tab1' =I18n.t 'auto.service.name'
 
     .container.autoservice-row-clean
       .row
         .tab-content.col-sm-9 style="min-height:231px;"
+
+          / О магазине
           .tab-pane.active.tab-pane-customize id="tab1"
+            h3 = I18n.t 'auto.store.title'
+            .media.autoservice-content-padding
+              .media-left
+                = image_tag(asset_path('general/credit-card.svg'), size: '100x100')
+              .media-body
+                p.text-justify
+                  = I18n.t 'auto.store.content'
+
+
+
+          .tab-pane.tab-pane-customize id="tab6"
             h3 =I18n.t 'auto.service.title'
             .media.autoservice-content-padding
               .media-left
@@ -91,14 +108,7 @@
                     = I18n.t 'button.find-out-prices'
                   a.btn.btn-success role="button" href="#"
                     = I18n.t 'auto.repair.button-perair-label'
-          .tab-pane.tab-pane-customize id="tab6"
-            h3 = I18n.t 'auto.store.title'
-            .media.autoservice-content-padding
-              .media-left
-                = image_tag(asset_path('general/credit-card.svg'), size: '100x100')
-              .media-body
-                p.text-justify
-                  small = I18n.t 'auto.store.content'
+
         .col-xs-12.col-sm-3.col-md-3.col-lg-3
           .autoservice-work-time
             .autoservice-work-time__header

@@ -1,0 +1,11 @@
+<% max_level = Spree::Config[:max_level_in_taxons_menu] || 1 %>
+
+<%if !current_page?(spree.root_url)%>
+  <nav id="taxonomies" class="sidebar-item" data-hook>
+    <% @taxonomies.each do |taxonomy| %>
+      <% cache [I18n.locale, taxonomy, max_level, @taxon] do %>
+        <h4 class='taxonomy-root'><%= link_to(taxonomy.name, seo_url(taxonomy.root)) %></h4>
+      <% end %>
+    <% end %>
+  </nav>
+<%end%>

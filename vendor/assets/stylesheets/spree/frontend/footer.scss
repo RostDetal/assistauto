@@ -1,5 +1,5 @@
 .footer-row{
-  background-color: #5E626B;
+  background-color: #4b4b4b;
   height: 250px;
   color: white;
 }
@@ -7,9 +7,21 @@
 .footer-block{
   padding-top: 5px;
   padding-left: 10px;
-
+  
   img{
     //margin-top: 10px;
+  }
+  
+  ul{
+    color: #B7B7B7;
+  }
+
+  a{
+    color: #b7b7b7;
+  }
+
+  a:hover{
+    color: #B7B7B7;
   }
 
 }

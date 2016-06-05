@@ -1,6 +1,16 @@
 # Place all the behaviors and hooks related to the matching controller here.
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
+
+
+
+Spree.initMaps = () ->
+  myMap = new ymaps.Map('map-container', {center:[55.44948, 37.737381],zoom:16, controls:[]})
+  myMap.behaviors.disable('scrollZoom');
+  storeMark = new ymaps.Placemark([55.44948, 37.737381], {hintContent: 'АсистАвто - интернет магазин автозапчастей, аксессуаров, резины, масла', balloonContent: 'Заказ товаров через сайт осуществляется круглосуточно'})
+  myMap.geoObjects.add(storeMark);
+
+
 sortBy = (key, a, b)->
   r = if r then 1 else -1
   return -1 * r if a[key] > b[key]

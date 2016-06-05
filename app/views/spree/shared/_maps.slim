@@ -1,0 +1,7 @@
+- if current_page?(spree.root_url)
+  .container-fluid.maps-row-customize
+    .container
+      .row
+        h3 РАСПОЛОЖЕНИЕ ПУНКТА ВЫДАЧИ
+    div#map-container style="height: 280px"
+  script ymaps.ready(Spree.initMaps);
