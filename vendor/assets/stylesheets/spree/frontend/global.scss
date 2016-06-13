@@ -3,9 +3,61 @@ $navbar-height: 39px;
 
 @import 'bootstrap';
 
+@font-face {
+  font-family: 'Roboto Slab';
+  src: font-url('robotoslabthin.eot');
+  src: font-url('robotoslabthin.eot?#iefix') format('embedded-opentype');
+  src: font-url('robotoslabthin.woff') format('woff');
+  src: font-url('robotoslabthin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto Slab';
+  src: font-url('robotoslablight.eot');
+  src: font-url('robotoslablight.eot?#iefix') format('embedded-opentype');
+  src: font-url('robotoslablight.woff') format('woff');
+  src: font-url('robotoslablight.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face{
+font-family: 'Roboto';
+src: font-url('robotothin.eot');
+src: font-url('robotothin.eot?#iefix') format('embedded-opentype');
+src: font-url('robotothin.woff') format('woff');
+src: font-url('robotothin.ttf') format('truetype');
+font-weight: 100;
+font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Roboto';
+  src: font-url('robotolight.eot');
+  src: font-url('robotolight.eot?#iefix') format('embedded-opentype');
+  src: font-url('robotolight.woff') format('woff');
+  src: font-url('robotolight.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: font-url('roboto.eot');
+  src: font-url('roboto.eot?#iefix') format('embedded-opentype');
+  src: font-url('roboto.woff') format('woff');
+  src: font-url('roboto.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
 body {
   padding-top: 60px;
   background-color: #f7f7f7;
+  font-family: 'Roboto', sans-serif !important;
 }
 
 .wrapper-content

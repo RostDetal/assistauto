@@ -1,0 +1,35 @@
+- if current_page?(spree.root_url)
+  .container.wrapper-search
+    .row
+      .col-sm-12.col-md-12.col-lg-12
+
+        .col-md-3
+          = image_tag(asset_path('general/clock.png'), size: '45x45', class: 'search-clock')
+          span.search-address
+            | C 10:00 ДО 21:00
+
+        .col-md-9
+          form.form-horizontal role="search" method="get" accept-charset="UTF-8" action="/products"
+            .form-group
+              label.col-sm-1.control-label.search-title for="keywords"
+                |ПОИСК
+              .col-md-8
+                input#keywords.form-control.search-input type="search" name="keywords"  placeholder="Введите название или код товара..."
+              .col-md-2
+                button.btn.btn-success.search-button type="submit"
+                  | Найти
+- else
+  .container.wrapper-search
+    .row
+      .col-sm-12.col-md-12.col-lg-12
+        form.form-horizontal role="search" method="get" accept-charset="UTF-8" action="/products"
+          .form-group
+            .col-md-1
+            label.col-md-1.col-xs-2.control-label.search-title for="keywords"
+              |ПОИСК
+            .col-md-7.col-xs-6
+              input#keywords.form-control.search-input type="search" name="keywords" placeholder="Введите название или код товара..."
+            .col-md-2.col-xs-2
+              button.btn.btn-success.search-button type="submit"
+                | Найти
+            .col-md-1

@@ -10,10 +10,14 @@
   <body class="<%= body_class %> no-outline" id="<%= @body_id || 'default' %>" data-hook="body">
     <%= render partial: 'spree/shared/google_analytics.js' %>
     <%= render partial: 'spree/shared/header_custom' %>
+    <%= render partial: 'spree/shared/search_new' %>
+    <%= render partial: 'spree/shared/advertisement_top'%>
 
-    <%= render partial: 'spree/shared/main_image' %>
 
-    <%= render partial: 'spree/shared/search_bar'%>
+    <!--<%= render partial: 'spree/shared/main_image' %>-->
+
+    <!--<%= render partial: 'spree/shared/search_bar'%>-->
+
 
     <!--<%= render partial: 'spree/shared/auto_service'%>-->
 
@@ -45,7 +49,7 @@
 
     <%= render partial: 'spree/shared/maps'%>
 
-    <!--<%= render partial: 'spree/shared/advertisement'%>-->
+    <%= render partial: 'spree/shared/advertisement'%>
     <%= render partial: 'spree/shared/footer'%>
   </body>
 </html>

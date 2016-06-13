@@ -1,16 +1,23 @@
 .container-fluid.footer-row
   .container
     .row
-      .col-md-3.footer-block
+      .col-md-2.footer-block
         =image_tag "logo-footer.png"
-      .col-md-3.footer-block
+      .col-md-2.footer-block
         h4 О нас
         ul.list-unstyled
           li
             =link_to "/store-information"
              |О магазине
-
-
+      .col-md-2.footer-block
+        h4 Автосервис
+        ul.list-unstyled
+          li
+            =link_to "/store-information"
+             |Ремонт
+          li
+            =link_to "/store-information"
+             |Диагностика
       .col-md-3.footer-block
         h4 Условия
         ul.list-unstyled
