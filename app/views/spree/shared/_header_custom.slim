@@ -3,11 +3,12 @@ nav.navbar.navbar-default.navbar-fixed-top.drop-shadow-bottom
     = link_to image_tag(Spree::Config[:logo]), spree.root_path, class: 'navbar-brand'
     - if spree_current_user
       .btn-group.pull-right
-        = link_to "", "", class: 'login-button navbar-brand dropdown-toggle', 'data-toggle' => "dropdown", 'aria-haspopup' => "true", 'aria-expanded' => "false"
+        = link_to "", "", class: 'settings-button navbar-brand dropdown-toggle', 'data-toggle' => "dropdown", 'aria-haspopup' => "true", 'aria-expanded' => "false"
+        = link_to "", spree.logout_path, class: 'logout-button navbar-brand'
         ul.dropdown-menu.custom-menu
           li = link_to Spree.t(:my_account), spree.account_path
           li = link_to Spree.t(:cart), spree.cart_path
-          li = link_to Spree.t(:logout), spree.logout_path
+          /li = link_to Spree.t(:logout), spree.logout_path
     - else
       = link_to "", spree.login_path, class: 'login-button navbar-brand pull-right'
 

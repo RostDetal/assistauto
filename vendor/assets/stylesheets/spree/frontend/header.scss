@@ -4,7 +4,7 @@
 
 .login-button
 {
-  background-image: url(asset_path("user/login.png"));
+  background-image: url(asset_path("user/log-in.svg"));
   background-position: center;
   background-repeat: no-repeat;
   padding: 10px 19px !important;
@@ -12,9 +12,41 @@
   vertical-align: middle;
 }
 
-.login-button:hover{
-  background-image: url(asset_path("user/login-hover.png"));
+.settings-button
+{
+  background-image: url(asset_path("user/settings.svg"));
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 10px 19px !important;
+  vertical-align: middle;
+  margin-right: 17px;
 }
+
+.settings-button:hover
+{
+  background-image: url(asset_path("user/settings-hover.svg"));
+}
+
+.login-button:hover{
+  background-image: url(asset_path("user/log-in-hover.svg"));
+}
+
+.logout-button
+{
+  background-image: url(asset_path("user/log-out.svg"));
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 10px 19px !important;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.logout-button:hover
+{
+  background-image: url(asset_path("user/log-out-hover.svg"));
+}
+
+
 
 .custom-menu{
   margin-top: 3px;
