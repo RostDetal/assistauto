@@ -1,5 +1,5 @@
 - if current_page?(spree.root_url)
-  .container-fluid.background-custom.overlay
+  .container-fluid.background-custom
     .container
       .row
         .col-md-12
@@ -9,20 +9,24 @@
               li.active data-target="#carousel-advertisement" data-slide-to="1"
               li data-target="#carousel-advertisement" data-slide-to="2"
             .carousel-inner role="listbox"
-              .item.active.col-md-12
+              .item.col-md-12
                 .col-md-1
                 .col-md-7
                   .carousel-title АВТОСЕРВИС
                   .carousel-subtitle  Да свершится предначеранное! Да свершится предначеранное! Да свершится предначеранное! Да свершится предначеранное!
+                  a.btn.btn-success.carousel-button href='#' role='button'
+                    |Подробнее
                 .col-md-3
                   .carousel-image
                     =image_tag ("general/service-advert.jpg")
                 .col-md-1
-              .item.col-md-12
+              .item.active.col-md-12
                 .col-md-1
                 .col-md-7
                   .carousel-title автомагазин
                   .carousel-subtitle  Да свершится предначеранное! Да свершится предначеранное! Да свершится предначеранное! Да свершится предначеранное!
+                  a.btn.btn-success.carousel-button href='#' role='button'
+                    |Подробнее
                 .col-md-3
                   .carousel-image
                     =image_tag ("general/buy-cart.jpg")
@@ -32,8 +36,10 @@
                 .col-md-7
                   .carousel-title автовыхлоп
                   .carousel-subtitle  Да свершится предначеранное! Да свершится предначеранное! Да свершится предначеранное! Да свершится предначеранное!
+                  a.btn.btn-success.carousel-button href='#' role='button'
+                    |Подробнее
                 .col-md-3
                   .carousel-image
                     = image_tag ("general/vihlop-advert.jpg")
                 .col-md-1
-
+  .container-fluid.box

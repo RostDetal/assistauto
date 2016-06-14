@@ -15,16 +15,11 @@
 
 
     <!--<%= render partial: 'spree/shared/main_image' %>-->
-
     <!--<%= render partial: 'spree/shared/search_bar'%>-->
-
-
     <!--<%= render partial: 'spree/shared/auto_service'%>-->
-
-
-
     <!--<%= render partial: 'spree/shared/auto_store'%>-->
     <!--<%= render partial: 'spree/shared/navigation_menu' %>-->
+
     <!--<div class="container">
     <%= render :partial => 'spree/shared/main_nav_bar' if store_menu? %>
     </div>-->
@@ -35,7 +30,6 @@
         <%= breadcrumbs(@taxon) %>
 
         <%= render partial: 'spree/shared/categories'%>
-
         <%= render partial: 'spree/shared/sidebar' if content_for? :sidebar %>
 
         <div id="content" class="<%= !content_for?(:sidebar) ? "col-sm-12" : "col-sm-8 col-md-9" %>" data-hook>
@@ -46,6 +40,8 @@
         <%= yield :templates %>
       </div>
     </div>
+
+    <%= render partial: 'spree/shared/advertisement_whywe'%>
 
     <%= render partial: 'spree/shared/maps'%>
 
