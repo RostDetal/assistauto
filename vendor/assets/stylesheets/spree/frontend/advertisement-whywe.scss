@@ -3,15 +3,40 @@
 .background-whywe
 {
   //height: 276px;
+  background-color: #EBF5F9;
+  padding-bottom: 15px;
+}
 
+.image-container
+{
+  display: table;
+  margin: auto;
+  padding-bottom: 10px;
+  span
+  {
+    text-align: left;
+    font-weight: bold;
+    font-size: 16px;
+    text-transform: uppercase;
+    padding-left: 20px;
+    display: table-cell;
+    width: 60px;
+    vertical-align: middle;
+  }
+  img {
+    float: left;
+    background-position: center center;
+    border-radius: 50%;
+  }
 }
 
 
 .why-we-title{
   color: black;
   display: block;
-  font-size: 3em;
+  font-size: 25px;
   font-weight: bold;
-  padding-top: 30px;
+  padding-bottom: 15px;
+  padding-top: 20px;
   text-transform: uppercase;
 }

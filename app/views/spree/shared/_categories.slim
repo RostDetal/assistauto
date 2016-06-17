@@ -1,10 +1,10 @@
 - if current_page?(spree.root_url)
   .container
     .row
-      .col-md-12
-        h3 КАТЕГОРИИ ТОВАРОВ
-      .wrapper
-        - rows = (@taxonomies.length * 0.25).ceil
-        - @taxonomies.each do |category|
-         = render :partial => "spree/shared/category", :locals => {:category => category}
+      .col-md-3
+      .col-md-9
+        .categories-wrapper
+          - rows = (@taxonomies.length * 0.25).ceil
+          - @taxonomies.each do |category|
+           = render :partial => "spree/shared/category", :locals => {:category => category}
 
