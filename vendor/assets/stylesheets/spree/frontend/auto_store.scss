@@ -2,7 +2,7 @@
 
 .autostore-wrapper
 {
-  padding: 10px 0
+  padding: 20px 0
 }
 
 .autostore-menu
@@ -24,10 +24,39 @@
   //line-height: 40px;
 }
 
+.tabs-store {
+  li.active > a {
+    background-color: #1B3645 !important;
+    color: #fff !important;
+  }
+
+  li.active > a:hover {
+    color: #fff !important;
+  }
+
+  .store-tab:focus{
+    background-color: #1B3645 !important;
+  }
+
+  .store-tab{
+    //border: 2px solid #FF6327;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #1B3645 !important;
+  }
+}
+
+
+
+.store-tab.active{
+  background-color: #1B3645 !important;
+}
+
+
 .autostore-menu-content
 {
   display: inline-block;
-  background-color: #edecef;
+  //background-color: #edecef;
   width: 100%;
 }
 
