@@ -5,7 +5,7 @@
 
 
 Spree.initMaps = () ->
-  myMap = new ymaps.Map('map-container', {center:[55.44948, 37.737381],zoom:16, controls:[]})
+  myMap = new ymaps.Map('map-container', {center:[55.44948, 37.737381],zoom:14, controls:[]})
   myMap.behaviors.disable('scrollZoom');
   storeMark = new ymaps.Placemark([55.44948, 37.737381], {hintContent: 'АсистАвто - интернет магазин автозапчастей, аксессуаров, резины, масла', balloonContent: 'Заказ товаров через сайт осуществляется круглосуточно'})
   myMap.geoObjects.add(storeMark);
